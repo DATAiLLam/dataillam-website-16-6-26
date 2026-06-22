@@ -1,0 +1,2338 @@
+/* ═══════════════════════════════════════════
+   DATAiLLAM — Contact Page CSS
+   Colors: Nav rgba(241,233,216,0.97)
+           Sections alternate #F6F0E2 / #E8DDC4
+   ═══════════════════════════════════════════ */
+
+/* ── 1. PALETTE ── */
+:root {
+    --paper: #F1E9D8;
+    --paper-soft: #F6F0E2;
+    --paper-deep: #E8DDC4;
+    --ink: #1A140E;
+    --ink-soft: #3A3127;
+    --mute: #8A7E6A;
+    --rule: #CFC1A4;
+    --red: #C8202A;
+    --red-d: #9A1520;
+    --red-light: rgba(200, 32, 42, .08);
+    --amber: #D4921A;
+    --amber-light: #E8A830;
+    --card-bg: #F6F0E2;
+    --white: #F6F0E2;
+    --cream: #F1E9D8;
+    --border: #CFC1A4;
+    --muted: #8A7E6A;
+    --subtle: #A8997E;
+    --font-d: 'Vesper Libre', serif;
+    --font-b: 'Inter', system-ui, sans-serif;
+    --font-v: 'Vesper Libre', Georgia, 'Times New Roman', serif;
+    --nav-h: 85px;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+    --ease-back: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+/* ── 2. RESET & OVERFLOW FIX ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    max-width: 100vw;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none
+}
+
+body {
+    font-family: var(--font-b);
+    color: var(--ink);
+    background: var(--paper-soft);
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
+    font-size: clamp(16px, 1.3vw, 20px);
+    line-height: 1.7;
+    transition: background-color .4s, color .4s;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none
+}
+
+/* All containers respect viewport */
+nav,
+main,
+section,
+footer,
+header,
+.container,
+.container-fluid {
+    max-width: 100%;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+section>.container {
+    padding: 0 clamp(16px, 5%, 80px);
+}
+
+[id] {
+    scroll-margin-top: calc(var(--nav-h) + 16px)
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer
+}
+
+.brand-text {
+    font-family: var(--font-v) !important;
+    font-weight: 700;
+    color: #000000 !important;
+}
+
+.brand-text span {
+    color: var(--red) !important;
+}
+
+:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px
+}
+
+/* ── 3. BRANDING UTILS ── */
+.brand-dataillam {
+    font-family: var(--font-v) !important;
+    font-weight: 700;
+    color: var(--ink) !important
+}
+
+.brand-dataillam .red-i {
+    color: var(--red) !important
+}
+
+.red-i {
+    color: var(--red)
+}
+
+.brand-bdaas {
+    font-family: var(--font-v) !important;
+    font-weight: 700;
+    color: var(--ink) !important
+}
+
+.brand-bdaas .red-char {
+    color: var(--red) !important
+}
+
+.red-char {
+    color: var(--red)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-v) !important;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.text-red {
+    color: var(--red) !important;
+}
+
+
+/* ── 5. SECTION COMMONS ── */
+.section-label {
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--red);
+    margin-bottom: .75rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.section-label::before {
+    display: none;
+}
+
+.section-h2 {
+    font-family: var(--font-v) !important;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    color: var(--ink);
+    margin-bottom: .85rem
+}
+
+.section-sub {
+    font-size: clamp(.95rem, 1.25vw, 1.5rem);
+    color: var(--muted);
+    line-height: 1.75
+}
+
+/* ── 6. REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity .8s var(--ease), transform .8s var(--ease)
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: none
+}
+
+/* ─────────────────────────────────────────
+   SECTION 1 — HERO  (bg: paper-soft #F6F0E2)
+───────────────────────────────────────── */
+.contact-hero {
+    padding: 0;
+    background: var(--paper-soft);
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (max-width: 1800px) and (min-width: 1200px) {
+    .contact-hero {
+        min-height: auto;
+        aspect-ratio: 16 / 7;
+    }
+}
+
+.hero-bg-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg-dots {
+    display: none;
+}
+
+.hero-bg-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.hero-bg-visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Black shadow overlay on top of the image */
+    z-index: 1;
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Road Wrappers removed */
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 180px 6% 100px;
+}
+
+.hero-info-box {
+    max-width: 800px;
+}
+
+.ch-title {
+    font-family: var(--font-v);
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+    color: #ffffff;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+    margin-bottom: 2rem;
+}
+
+.anim-line {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFade 0.8s ease forwards;
+}
+
+.anim-line-1 {
+    animation-delay: 0.1s;
+}
+
+.anim-line-2 {
+    animation-delay: 0.5s;
+}
+
+.anim-line-3 {
+    animation-delay: 0.9s;
+}
+
+.ch-title .text-red {
+    transition: text-shadow 0.3s ease;
+}
+
+.ch-title .text-red:hover {
+    text-shadow: 0 0 15px rgba(200, 32, 42, 0.3);
+}
+
+.ch-body {
+    font-family: var(--font-b);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+    line-height: 1.8;
+    max-width: 680px;
+    font-weight: 500;
+}
+
+.ch-body .red-char {
+    color: var(--amber) !important;
+}
+
+/* Actions Removed to match Figma */
+.ch-actions {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .contact-hero {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        aspect-ratio: 1448 / 1086;
+        margin-top: var(--nav-h);
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .hero-bg-visual {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-bg-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-bg-visual::after {
+        display: block; /* Ensure black shadow overlay is visible on mobile */
+    }
+
+    .hero-content-wrapper {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 6%;
+        z-index: 2;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero-info-box {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .ch-title {
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        font-size: clamp(20px, 5.5vw, 36px);
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+    }
+
+    .ch-body {
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
+        font-size: clamp(12px, 3.2vw, 15px);
+        line-height: 1.5;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+
+
+.ch-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.ch-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: #fff;
+    padding: .85rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-b);
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .3s var(--ease);
+    box-shadow: 0 6px 20px rgba(200, 32, 42, .25);
+}
+
+.ch-btn-primary:hover {
+    background: var(--red-d);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(200, 32, 42, .35);
+    color: #fff;
+}
+
+.ch-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--ink);
+    padding: .85rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--font-b);
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--rule);
+    transition: all .3s var(--ease);
+}
+
+.ch-btn-ghost:hover {
+    border-color: var(--amber);
+    color: var(--amber)
+}
+
+/* Hero Visuals & Scroll Cue Removed */
+
+/* ─────────────────────────────────────────
+   SECTION 2 — INFO CARDS  (bg: paper-deep #E8DDC4)
+───────────────────────────────────────── */
+.info-cards-section {
+    background: var(--paper-deep);
+    padding: clamp(6rem, 10vw, 10rem) 0 2rem 0;
+}
+
+/* Card animation states */
+.card-anim {
+    opacity: 0;
+    transform: translateY(50px) scale(.95);
+    transition: opacity .7s var(--ease), transform .7s var(--ease), box-shadow .3s, border-color .3s;
+}
+
+.card-anim.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.info-card {
+    background: var(--paper-soft);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all .3s var(--ease);
+    position: relative;
+    height: 100%
+}
+
+.info-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--amber);
+    transform: scaleX(0);
+    transition: transform .4s var(--ease);
+    transform-origin: left
+}
+
+.info-card:hover {
+    box-shadow: 0 20px 50px rgba(26, 20, 14, .1);
+    border-color: rgba(200, 32, 42, .2);
+}
+
+.info-card:hover::after {
+    transform: scaleX(1)
+}
+
+.info-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem
+}
+
+/* Reverted icon to left side */
+
+.info-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+    transition: background .3s var(--ease), transform .3s var(--ease-back);
+}
+
+.info-icon i {
+    color: var(--red);
+    font-size: 1.6rem;
+    transition: color .3s
+}
+
+.info-card:hover .info-icon {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.info-card:hover .info-icon i {
+    color: var(--red);
+}
+
+.info-card-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule)
+}
+
+.info-title {
+    font-family: var(--font-d);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2
+}
+
+.info-body {
+    font-family: var(--font-b);
+    font-size: clamp(.83rem, 1vw, .92rem);
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem
+}
+
+.info-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .84rem;
+    font-weight: 600;
+    color: var(--red);
+    text-decoration: none;
+    transition: gap .25s, color .2s;
+    margin-top: auto;
+}
+
+.info-link:hover {
+    gap: 10px;
+    color: var(--red-d)
+}
+
+.info-link--static {
+    cursor: default
+}
+
+/* ─────────────────────────────────────────
+   SECTION - OUR JOURNEY STEPPER TIMELINE
+   ───────────────────────────────────────── */
+.contact-journey-section {
+    background: var(--paper-deep);
+    position: relative;
+    /* height set by Vanilla JS — exactly 100vh + overflow */
+}
+
+/* Spine stretches the full section (direct child of section) */
+.journey-section-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    background: #2a2a2a;
+    z-index: 1;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
+.journey-section-spine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    background-image: linear-gradient(to bottom, transparent 50%, var(--amber) 50%);
+    background-size: 100% 40px;
+}
+
+/* Sticky frame: locks to viewport while user scrolls through section */
+.journey-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+/* Heading area pinned at top of the sticky frame */
+.journey-sticky-wrapper>.container:first-of-type {
+    flex-shrink: 0;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 10;
+    background: var(--paper-deep);
+}
+
+/* Scrollable area for cards — clips content */
+.timeline-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    /* allow flex child to shrink */
+}
+
+/* The timeline strip that gets translated upward by JS */
+.road-timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0 60px;
+    will-change: transform;
+}
+
+
+.contact-journey-section .section-h2 {
+    color: var(--ink);
+}
+
+.contact-journey-section .section-sub {
+    color: var(--ink-soft);
+}
+
+
+
+/* ── The Road Spine (center image) ── */
+.road-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.road-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ── Individual Milestone ── */
+.road-milestone {
+    position: relative;
+    width: 50%;
+    padding: 0 50px;
+    margin-bottom: 60px;
+    z-index: 2;
+}
+
+.road-milestone:last-child {
+    margin-bottom: 0;
+}
+
+/* Left-side milestones → pushed to the left half */
+.road-milestone.left {
+    padding-right: 80px;
+    text-align: right;
+}
+
+/* Right-side milestones → pushed to the right half */
+.road-milestone.right {
+    margin-left: 50%;
+    padding-left: 80px;
+    text-align: left;
+}
+
+/* ── Glowing Node on the Road ── */
+.milestone-node {
+    position: absolute;
+    top: 30px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--amber);
+    border: 3px solid #fdfaf4;
+    z-index: 5;
+    box-shadow: 0 0 0 5px rgba(212, 146, 26, 0.25),
+        0 0 15px rgba(212, 146, 26, 0.3);
+    transition: all 0.4s var(--ease);
+}
+
+.road-milestone.left .milestone-node {
+    right: -11px;
+    /* Centers on the road edge */
+}
+
+.road-milestone.right .milestone-node {
+    left: -11px;
+}
+
+/* Connector line from node to card */
+.road-milestone::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    height: 2px;
+    background: var(--amber);
+    opacity: 0.5;
+    z-index: 3;
+    transition: all 0.4s var(--ease);
+}
+
+.road-milestone.left::before {
+    right: 11px;
+    width: 50px;
+}
+
+.road-milestone.right::before {
+    left: 11px;
+    width: 50px;
+}
+
+/* ── Milestone Card ── */
+.milestone-card {
+    background: #fdfaf4;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: 0 4px 20px rgba(26, 20, 14, 0.04);
+    transition: all 0.4s var(--ease);
+    text-align: left;
+}
+
+.road-milestone.left .milestone-card {
+    flex-direction: row-reverse;
+}
+
+.road-milestone:hover .milestone-card {
+    border-color: var(--amber);
+    box-shadow: 0 12px 40px rgba(212, 146, 26, 0.1);
+    transform: translateY(-5px);
+}
+
+.road-milestone:hover .milestone-node {
+    box-shadow: 0 0 0 8px rgba(212, 146, 26, 0.35),
+        0 0 25px rgba(212, 146, 26, 0.5);
+    transform: scale(1.2);
+}
+
+.road-milestone:hover::before {
+    opacity: 1;
+    width: 60px;
+}
+
+/* ── Milestone Logo Image ── */
+.milestone-img-wrap {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 24px 4px 24px 4px;
+    border: 2px solid var(--border);
+    padding: 8px;
+    background: #fdfaf4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.4s;
+}
+
+.road-milestone:hover .milestone-img-wrap {
+    border-color: var(--amber);
+}
+
+.milestone-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ── Card Body Typography ── */
+.milestone-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.milestone-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-year {
+    font-family: var(--font-v);
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--amber);
+    line-height: 1;
+}
+
+.milestone-month {
+    font-family: var(--font-b);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1.5px;
+    padding: 2px 8px;
+    background: var(--red-light);
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.milestone-title {
+    font-family: var(--font-v);
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.milestone-text {
+    font-family: var(--font-b);
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+.milestone-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.milestone-feature {
+    font-family: var(--font-b);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.milestone-feature span {
+    color: var(--amber);
+    font-size: 13px;
+}
+
+/* ─────────────────────────────────────────
+   SECTION 3 — FORM  (bg: paper-soft #F6F0E2)
+───────────────────────────────────────── */
+.form-section {
+    background: var(--paper-soft);
+    padding: clamp(6rem, 10vw, 10rem) 0;
+}
+
+/* Sidebar wrapper — proper left spacing */
+.form-sidebar-wrap {
+    padding: 0 clamp(0px, 3vw, 2.5rem) 0 0;
+}
+
+.sidebar-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-sidebar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    /* Remove side padding to align box with text above */
+    background: transparent;
+    border: none;
+    transition: all .3s var(--ease);
+}
+
+.form-sidebar-item:hover {
+    transform: translateX(8px);
+}
+
+.form-sidebar-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: grid;
+    place-items: center;
+    transition: background .3s, transform .3s var(--ease-back);
+}
+
+.form-sidebar-icon i {
+    color: var(--red);
+    font-size: 1.4rem
+}
+
+.form-sidebar-item:hover .form-sidebar-icon {
+    background: rgba(255, 255, 255, 0.4);
+    transform: none;
+}
+
+.form-sidebar-item:hover .form-sidebar-icon i {
+    color: var(--red);
+}
+
+.form-sidebar-title {
+    font-family: var(--font-v);
+    font-size: .98rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: .2rem
+}
+
+.form-sidebar-desc {
+    font-size: .84rem;
+    color: var(--muted);
+    line-height: 1.5
+}
+
+/* Direct contact below sidebar */
+.sidebar-contact-direct {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--paper-deep);
+    border-radius: 16px;
+    border: 1px solid var(--rule);
+}
+
+.sidebar-contact-direct span {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted)
+}
+
+.sidebar-contact-direct a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.sidebar-contact-direct a i {
+    color: var(--red);
+    font-size: 1rem
+}
+
+.sidebar-contact-direct a:hover {
+    color: var(--red)
+}
+
+/* Form card */
+.form-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 28px;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(26, 20, 14, .05), 0 24px 56px rgba(26, 20, 14, .07);
+    transition: box-shadow .4s;
+}
+
+.form-card:hover {
+    box-shadow: 0 4px 24px rgba(26, 20, 14, .05), 0 32px 64px rgba(200, 32, 42, .09)
+}
+
+.form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--amber);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%
+    }
+
+    100% {
+        background-position: 200% 50%
+    }
+}
+
+.form-card-header {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule)
+}
+
+.form-card-title {
+    font-family: var(--font-v);
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: .3rem
+}
+
+.form-card-sub {
+    font-size: .8rem;
+    color: var(--muted)
+}
+
+/* Fields */
+.field-wrap {
+    position: relative
+}
+
+.fl-input {
+    width: 100%;
+    background: #e5e7eb;
+    /* Grey background as per image */
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 1.45rem 1.15rem .65rem;
+    font-family: var(--font-b);
+    font-size: .92rem;
+    color: var(--ink);
+    transition: all .3s var(--ease);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.fl-input::placeholder {
+    color: transparent
+}
+
+.fl-input:focus {
+    outline: none;
+    background: var(--paper-deep);
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px rgba(200, 32, 42, .08);
+    transform: translateY(-1px);
+}
+
+.fl-label {
+    position: absolute;
+    left: 1.15rem;
+    top: 1.1rem;
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--muted);
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform .25s var(--ease), color .25s;
+}
+
+.fl-input:focus+.fl-label,
+.fl-input:not(:placeholder-shown)+.fl-label,
+.fl-select.has-value+.fl-label {
+    transform: translateY(-.65rem) scale(.75);
+    color: var(--red);
+    font-weight: 700;
+}
+
+.fl-textarea {
+    min-height: 140px;
+    resize: vertical;
+    padding-top: 1.6rem
+}
+
+.fl-textarea::placeholder {
+    color: transparent
+}
+
+.fl-select {
+    width: 100%;
+    background: #e5e7eb;
+    /* Grey background as per image */
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 1.45rem 1.15rem .65rem;
+    font-family: var(--font-b);
+    font-size: .92rem;
+    color: var(--ink);
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1.5l6 6 6-6' stroke='%23C8202A' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    transition: all .3s var(--ease);
+    cursor: pointer;
+}
+
+.fl-select option {
+    background: var(--paper-soft);
+    color: var(--ink);
+    padding: 10px
+}
+
+.fl-select.placeholder-selected {
+    color: transparent
+}
+
+.fl-select.has-value {
+    color: var(--ink)
+}
+
+.fl-select:focus {
+    outline: none;
+    border-color: var(--red);
+    background-color: var(--paper-deep);
+    box-shadow: 0 0 0 4px rgba(200, 32, 42, .08)
+}
+
+.fl-input.is-err,
+.fl-select.is-err {
+    border-color: rgba(200, 32, 42, .6) !important;
+    background: rgba(200, 32, 42, .04) !important;
+    box-shadow: 0 0 0 3px rgba(200, 32, 42, .1) !important
+}
+
+.fl-input.is-good,
+.fl-select.is-good {
+    border-color: rgba(40, 167, 69, .4) !important
+}
+
+.field-error-msg {
+    font-size: .71rem;
+    color: var(--red);
+    margin-top: .35rem;
+    padding-left: .25rem;
+    display: none;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: none
+}
+
+.is-err~.field-error-msg {
+    display: block;
+    animation: errSlide .3s var(--ease) forwards
+}
+
+@keyframes errSlide {
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+/* Submit row */
+.form-submit-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    color: #000;
+    /* Black text as per image */
+    border: none;
+    border-radius: 50px;
+    padding: 1.1rem 5rem;
+    font-family: var(--font-b);
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: background .2s, transform .2s var(--ease-back), box-shadow .2s;
+    box-shadow: 0 4px 12px rgba(200, 32, 42, .2);
+}
+
+.btn-submit:hover {
+    background: var(--red-d);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(200, 32, 42, .4)
+}
+
+.btn-submit.success {
+    background: #6b7280
+}
+
+.btn-icon {
+    font-size: .85rem;
+    transition: transform .3s var(--ease)
+}
+
+.btn-submit:hover .btn-icon {
+    transform: translateX(4px)
+}
+
+.spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .6s linear infinite;
+}
+
+.btn-submit.loading .spinner {
+    display: block
+}
+
+.btn-submit.loading .btn-txt,
+.btn-submit.loading .btn-icon {
+    opacity: 0
+}
+
+.form-success-banner {
+    display: none;
+    align-items: center;
+    gap: .75rem;
+    background: rgba(40, 167, 69, .08);
+    border: 1px solid rgba(40, 167, 69, .2);
+    border-radius: 12px;
+    padding: .85rem 1.25rem;
+    color: #28a745;
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+.form-success-banner.show {
+    display: flex;
+    animation: bannerIn .4s var(--ease)
+}
+
+.form-success-banner i {
+    font-size: 1.2rem
+}
+
+@keyframes bannerIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Road Wrappers */
+.hero-road-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 300px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-road-wrapper-mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 200px;
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+}
+
+.ch-title {
+    opacity: 1;
+    transform: none
+}
+
+.form-status-msg {
+    font-size: .8rem;
+    opacity: .8;
+    color: var(--muted);
+    margin-top: .5rem
+}
+
+/* ─────────────────────────────────────────
+   SECTION 4 — MAP  (bg: paper-deep #E8DDC4)
+───────────────────────────────────────── */
+.map-section {
+    background: var(--paper-deep);
+    padding: 2rem 0 clamp(6rem, 10vw, 10rem) 0;
+}
+
+.map-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    box-shadow: 0 8px 40px rgba(26, 20, 14, .07);
+    height: clamp(280px, 40vw, 420px);
+}
+
+/* ─────────────────────────────────────────
+   SECTION 5 — FAQ  (bg: paper-soft #F6F0E2)
+───────────────────────────────────────── */
+.faq-section {
+    background: var(--paper-soft);
+    padding: clamp(6rem, 10vw, 10rem) 0;
+}
+
+.faq-container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fdfaf4;
+    /* Slightly lighter cream background for items */
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    /* Matching Image 1 rounded corners */
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    transition: all .3s var(--ease);
+    box-shadow: 0 4px 15px rgba(26, 20, 14, 0.04);
+}
+
+.faq-header-left {
+    margin-bottom: 2.5rem;
+}
+
+.faq-header-left .section-label {
+    color: var(--amber);
+}
+
+@media (max-width: 991.98px) {
+    .faq-header-left {
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+}
+
+.faq-item:hover {
+    border-color: rgba(212, 146, 26, .4);
+    box-shadow: 0 8px 24px rgba(212, 146, 26, .08);
+    transform: translateY(-2px)
+}
+
+.faq-item.open {
+    border-color: var(--amber);
+    box-shadow: 0 8px 24px rgba(212, 146, 26, .1)
+}
+
+.faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    width: 100%;
+    font-family: var(--font-d);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    transition: all .3s var(--ease);
+}
+
+.faq-q:hover {
+    background: rgba(212, 146, 26, .04)
+}
+
+.faq-chevron {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all .3s var(--ease);
+    color: #fff;
+}
+
+.faq-chevron i {
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-item.open .faq-chevron {
+    background: var(--amber);
+    transform: rotate(45deg)
+}
+
+.faq-item.open .faq-chevron i {
+    color: #fff
+}
+
+.faq-a {
+    display: none;
+    overflow: hidden;
+}
+
+.faq-a-inner {
+    padding: 0 1.5rem 1.25rem;
+    font-size: .9rem;
+    color: var(--muted);
+    line-height: 1.72
+}
+
+/* Removed to use jQuery slideDown */
+
+/* Footer styles removed to use unified css/footer.css */
+
+/* BTT */
+.btt {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 900;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(212, 146, 26, .4);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity .3s, transform .3s, background .2s;
+}
+
+.btt.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0)
+}
+
+.btt:hover {
+    background: var(--red)
+}
+
+/* ── KEYFRAMES ── */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(.85)
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+
+/* Large monitors (1400px+) */
+@media(min-width:1400px) {
+    .hero-content-wrap {
+        max-width: 1380px;
+        gap: 80px
+    }
+
+    .hero-card-stack {
+        width: 380px;
+        height: 380px
+    }
+}
+
+/* 1600px - 1440p Monitors */
+@media(min-width:1600px) {
+    .container {
+        max-width: 1500px;
+    }
+
+    .section-h2 {
+        font-size: 64px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 1400px;
+        padding: 160px 6% 100px;
+    }
+
+    .hero-info-box {
+        max-width: 1100px;
+    }
+
+    .ch-title {
+        font-size: 82px;
+        margin-bottom: 30px;
+        line-height: 1.15;
+    }
+
+    .ch-body {
+        max-width: 800px;
+        font-size: 20px;
+    }
+
+    .road-timeline {
+        max-width: 1300px;
+    }
+
+    .milestone-title {
+        font-size: 28px;
+    }
+
+    .milestone-year {
+        font-size: 52px;
+    }
+
+    .milestone-card {
+        padding: 3rem;
+        gap: 2.5rem;
+    }
+
+    .milestone-img-wrap {
+        width: 110px;
+        height: 110px;
+    }
+
+    .milestone-text {
+        font-size: 1.15rem;
+    }
+
+    .milestone-feature {
+        font-size: 1.05rem;
+    }
+
+    .milestone-feature span {
+        font-size: 1.1rem;
+    }
+
+    .form-card {
+        padding: 4rem;
+    }
+
+    .form-sidebar-wrap {
+        padding-right: 5rem;
+    }
+
+    .form-title {
+        font-size: 3.5rem;
+        margin-bottom: 25px;
+    }
+
+    .map-container {
+        height: 500px;
+    }
+
+    .faq-container {
+        max-width: 1100px;
+    }
+
+    .faq-heading h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* 2000px - Ultrawide Monitors */
+@media(min-width:2000px) {
+    .container {
+        max-width: 1800px;
+    }
+
+    .section-h2 {
+        font-size: 80px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 1700px;
+        padding: 190px 6% 120px;
+    }
+
+    .hero-info-box {
+        max-width: 1300px;
+    }
+
+    .ch-title {
+        font-size: 96px;
+        margin-bottom: 40px;
+        line-height: 1.15;
+    }
+
+    .ch-body {
+        max-width: 900px;
+        font-size: 24px;
+        line-height: 1.8;
+    }
+
+    .road-timeline {
+        max-width: 1600px;
+    }
+
+    .milestone-title {
+        font-size: 36px;
+    }
+
+    .milestone-year {
+        font-size: 64px;
+    }
+
+    .milestone-card {
+        padding: 3.5rem;
+        gap: 3rem;
+    }
+
+    .milestone-img-wrap {
+        width: 130px;
+        height: 130px;
+    }
+
+    .milestone-text {
+        font-size: 1.3rem;
+    }
+
+    .milestone-feature {
+        font-size: 1.2rem;
+        gap: 8px;
+    }
+
+    .milestone-feature span {
+        font-size: 1.25rem;
+    }
+
+    .form-card {
+        padding: 5rem;
+    }
+
+    .form-sidebar-wrap {
+        padding-right: 7rem;
+    }
+
+    .form-title {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        font-size: 1.1rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .map-container {
+        height: 600px;
+    }
+
+    .faq-container {
+        max-width: 1200px;
+    }
+
+    .faq-heading h2 {
+        font-size: 4.5rem;
+    }
+
+    .faq-heading p {
+        font-size: 1.4rem;
+        max-width: 550px;
+    }
+
+    .faq-question {
+        font-size: 1.35rem;
+    }
+
+    .faq-answer p {
+        font-size: 1.25rem;
+    }
+}
+
+/* 2560px - o Monitors */
+@media(min-width:2560px) {
+    .container {
+        max-width: 2300px;
+    }
+
+    .section-h2 {
+        font-size: 100px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 2200px;
+        padding: 240px 6% 150px;
+    }
+
+    .hero-info-box {
+        max-width: 1800px;
+    }
+
+    .contact-hero {
+        min-height: 75vh;
+    }
+
+    .ch-title {
+        font-size: 110px;
+        margin-bottom: 50px;
+        line-height: 1.15;
+    }
+
+    .ch-body {
+        max-width: 1100px;
+        font-size: 32px;
+        line-height: 1.8;
+    }
+
+    .road-timeline {
+        max-width: 2000px;
+    }
+
+    .milestone-title {
+        font-size: 48px;
+    }
+
+    .milestone-year {
+        font-size: 82px;
+    }
+
+    .milestone-text {
+        font-size: 1.6rem;
+    }
+
+    .milestone-feature {
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+
+    .milestone-feature span {
+        font-size: 1.4rem;
+    }
+
+    .milestone-card {
+        padding: 5rem;
+        gap: 4rem;
+        border-radius: 32px;
+    }
+
+    .milestone-img-wrap {
+        width: 160px;
+        height: 160px;
+    }
+
+    .road-milestone {
+        padding: 0 100px;
+    }
+
+    .form-section {
+        padding: 14rem 0;
+    }
+
+    .form-card {
+        padding: 7rem;
+        border-radius: 40px;
+    }
+
+    .form-sidebar-wrap {
+        padding-right: 10rem;
+    }
+
+    .form-title {
+        font-size: 6.5rem;
+        margin-bottom: 40px;
+    }
+
+    .form-control {
+        padding: 2rem 1.8rem;
+        font-size: 1.4rem;
+        border-radius: 12px;
+    }
+
+    .btn-submit {
+        padding: 2rem 3rem;
+        font-size: 1.5rem;
+        border-radius: 60px;
+    }
+
+    .map-container {
+        height: 800px;
+    }
+
+    .faq-container {
+        max-width: 1500px;
+    }
+
+    .faq-heading h2 {
+        font-size: 6.5rem;
+        margin-bottom: 40px;
+    }
+
+    .faq-heading p {
+        font-size: 1.8rem;
+        max-width: 700px;
+        line-height: 1.8;
+    }
+
+    .faq-q {
+        font-size: 1.8rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .faq-a-inner {
+        font-size: 1.6rem;
+        padding: 0 2rem 2rem;
+        line-height: 1.8;
+    }
+}
+
+/* Tablet (991px) */
+@media(max-width:991.98px) {
+
+
+    .hero-content-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 4rem clamp(16px, 5%, 40px);
+    }
+
+    .hero-right {
+        justify-content: flex-start
+    }
+
+    .hero-card-stack {
+        width: 100%;
+        max-width: 380px;
+        height: 280px
+    }
+
+    .hero-stat-card--2 {
+        right: 0
+    }
+
+    .contact-hero {
+        padding-top: 0;
+        margin-top: var(--nav-h);
+    }
+
+    .ch-title {
+        font-size: clamp(2rem, 5.5vw, 3rem)
+    }
+
+    .ch-body {
+        max-width: 100%
+    }
+
+    .form-sidebar-wrap {
+        padding-right: 0
+    }
+
+
+    /* Tablet Timeline 2-Column Fixes (keeps cards square-shaped without squishing) */
+    .road-milestone {
+        padding: 0 10px;
+        margin-bottom: 40px;
+    }
+
+    .road-milestone.left {
+        padding-right: 40px;
+    }
+
+    .road-milestone.right {
+        padding-left: 40px;
+    }
+
+    /* Fix connector lines so they touch the cards perfectly */
+    .road-milestone.left::before {
+        right: 11px;
+        width: 29px;
+    }
+
+    .road-milestone.right::before {
+        left: 11px;
+        width: 29px;
+    }
+
+    /* Stack image and text vertically to create the square shape */
+    .road-milestone.left .milestone-card,
+    .road-milestone.right .milestone-card {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .milestone-img-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .milestone-year {
+        font-size: 24px;
+    }
+
+    .milestone-title {
+        font-size: 16px;
+    }
+
+    .milestone-text {
+        font-size: 13px;
+    }
+}
+
+/* Mobile (767px) */
+@media(max-width:767.98px) {
+    .contact-hero {
+        min-height: auto;
+        padding-top: 0;
+        margin-top: var(--nav-h);
+        aspect-ratio: 1 / 1.1;
+    }
+
+    .hero-content-wrap {
+        padding: 3rem clamp(16px, 5%, 24px) 2.5rem
+    }
+
+    .hero-right {
+        display: none
+    }
+
+    .hero-scroll-cue {
+        display: none
+    }
+
+    .ch-title {
+        font-size: clamp(1.9rem, 6vw, 2.5rem)
+    }
+
+    .ch-actions {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .ch-btn-primary,
+    .ch-btn-ghost {
+        width: 100%;
+        justify-content: center
+    }
+
+    .info-cards-section,
+    .contact-journey-section,
+    .form-section,
+    .map-section,
+    .faq-section {
+        padding: 3.5rem 0
+    }
+
+    .contact-journey-section {
+        padding-top: 0;
+    }
+
+    .journey-sticky-wrapper>.container:first-of-type {
+        padding-top: 25px;
+    }
+
+    /* Road Timeline Mobile Overrides */
+    .journey-section-spine {
+        left: 40px;
+        transform: translateX(-50%);
+        width: 40px;
+    }
+
+    .journey-section-spine::after {
+        width: 3px;
+        background-size: 100% 30px;
+    }
+
+    .road-spine {
+        left: 20px;
+        transform: none;
+        width: 40px;
+    }
+
+    .road-milestone,
+    .road-milestone.left,
+    .road-milestone.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 80px;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .road-milestone.left .milestone-node,
+    .road-milestone.right .milestone-node {
+        left: 29px;
+        right: auto;
+    }
+
+    .road-milestone::before,
+    .road-milestone.left::before,
+    .road-milestone.right::before {
+        left: 51px;
+        right: auto;
+        width: 20px;
+    }
+
+    .milestone-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .milestone-img-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .milestone-year {
+        font-size: 28px;
+    }
+
+    .milestone-title {
+        font-size: 17px;
+    }
+
+    .milestone-text {
+        font-size: 13.5px;
+    }
+
+    .milestone-features {
+        gap: 8px;
+    }
+
+    .road-milestone {
+        margin-bottom: 35px;
+    }
+
+
+
+    .form-card {
+        padding: 1.75rem 1.25rem
+    }
+
+    .form-section .col-lg-5 {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-section .section-label {
+        justify-content: center;
+    }
+
+    .sidebar-features {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .form-sidebar-item {
+        text-align: left;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 1.1rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    .form-sidebar-wrap {
+        padding: 0
+    }
+
+    .hero-stat-card {
+        min-width: 160px
+    }
+
+}
+
+/* Small mobile (480px) */
+@media(max-width:480px) {
+    .ch-title {
+        font-size: 1.75rem
+    }
+
+    .faq-q {
+        padding: 1.25rem;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    .faq-a-inner {
+        padding: 0 1rem 1rem
+    }
+
+    .info-card {
+        padding: 1.75rem 1.25rem
+    }
+
+}
+
+@media print {
+
+    nav,
+    .btt {
+        display: none
+    }
+}
+
+/* ── Large Laptops (1600px+) ── */
+@media (min-width: 1600px) {
+    .fl-input {
+        padding: 1.8rem 1.4rem .8rem;
+        font-size: 1.05rem;
+        border-radius: 14px;
+    }
+
+    .fl-select {
+        padding: 1.8rem 1.4rem .8rem;
+        font-size: 1.05rem;
+        border-radius: 14px;
+    }
+
+    .fl-label {
+        left: 1.4rem;
+        top: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .fl-textarea {
+        min-height: 180px;
+        padding-top: 2rem;
+    }
+
+    .form-card {
+        padding: clamp(2.5rem, 4vw, 4rem);
+        border-radius: 32px;
+    }
+
+    .form-sidebar-title {
+        font-size: 1.1rem;
+    }
+
+    .form-sidebar-desc {
+        font-size: .95rem;
+    }
+
+    .form-sidebar-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-sidebar-icon i {
+        font-size: 1.6rem;
+    }
+}
+
+/* ── 4K Monitors (2560px+) ── */
+@media (min-width: 2560px) {
+    .section-label {
+        font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .section-h2 {
+        font-size: clamp(48px, 5.5vw, 86px);
+        margin-bottom: 2rem;
+    }
+
+    .section-sub {
+        font-size: clamp(1.5rem, 1.8vw, 2.2rem);
+        max-width: 1200px !important;
+    }
+
+    .fl-input {
+        padding: 2.2rem 1.6rem 1rem;
+        font-size: 1.15rem;
+        border-radius: 16px;
+    }
+
+    .fl-select {
+        padding: 2.2rem 1.6rem 1rem;
+        font-size: 1.15rem;
+        border-radius: 16px;
+    }
+
+    .fl-label {
+        left: 1.6rem;
+        top: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .fl-textarea {
+        min-height: 220px;
+        padding-top: 2.2rem;
+    }
+
+    .form-card {
+        padding: clamp(3rem, 5vw, 5rem);
+        border-radius: 36px;
+    }
+
+    .form-sidebar-title {
+        font-size: 1.25rem;
+    }
+
+    .form-sidebar-desc {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .form-sidebar-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .form-sidebar-icon i {
+        font-size: 1.8rem;
+    }
+
+    .form-sidebar-item {
+        gap: 2rem;
+        padding: 1.25rem 0;
+    }
+
+    .btn-submit {
+        padding: 16px 52px;
+        font-size: 18px;
+        border-radius: 50px;
+    }
+}
