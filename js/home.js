@@ -29,9 +29,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }, { threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
         
         treeElements.forEach(el => treeObserver.observe(el));
+    }    // --- SEQUENTIAL GROWTH TRAJECTORY ANIMATION ---
+    const growthContainer = document.getElementById('growthContainer');
+    const replayBtn = document.getElementById('btnReplayTrajectory');
+
+    if (growthContainer) {
+        function triggerTrajectoryAnimation() {
+            growthContainer.classList.remove('active');
+            // Force reflow so animations restart cleanly
+            void growthContainer.offsetWidth;
+            growthContainer.classList.add('active');
+        }
+
+        const growthObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    triggerTrajectoryAnimation();
+                }
+            });
+        }, { threshold: 0.2 });
+
+        growthObserver.observe(growthContainer);
+
+        if (replayBtn) {
+            replayBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                triggerTrajectoryAnimation();
+            });
+        }
     }
-
-
 });
 
 // --- VIDEO PLAYER STUB ---

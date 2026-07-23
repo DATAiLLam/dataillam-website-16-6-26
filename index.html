@@ -105,50 +105,172 @@
                 </div>
             </div>
 
-            <!-- RIGHT VISUAL (GLASSMORPHIC CARDS) -->
+            <!-- RIGHT VISUAL (SEQUENTIAL GROWTH TRAJECTORY) -->
             <div class="hero-visual hero-anim-card">
-                <!-- Main Outer Glass Card: BDaaS Launch -->
-                <div class="glass-card main-launch-card">
-                    <!-- Faded Brand Watermark inside the card -->
-                    <div class="card-watermark">
-                        <img src="img/Without BG Without Name.png" alt="DATAiLLAM Watermark Logo">
+                <div class="growth-trajectory-container idled" id="growthContainer">
+                    <!-- Control Bar -->
+                    <div class="trajectory-header">
+                        <div class="trajectory-tag">
+                            <span class="live-pulse"></span>
+                            <span>BDaaS Engine Growth Path</span>
+                        </div>
+                        <button class="btn-replay" id="btnReplayTrajectory" title="Replay Growth Sequence">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                            <span>Replay</span>
+                        </button>
                     </div>
 
-                    <!-- Main Card Header -->
-                    <div class="card-header main-header">
-                        <div class="card-icon">
-                            <img src="img/Without BG Without Name (1).png" alt="BDaaS Launch">
-                        </div>
-                        <div class="card-title-group">
-                            <span class="card-subtitle">BDaaS LAUNCH</span>
-                            <span class="card-title">For Startups & Early SMEs</span>
-                        </div>
-                    </div>
+                    <!-- SVG Graph Canvas -->
+                    <svg class="growth-graph" viewBox="0 0 500 360" preserveAspectRatio="none" id="growthSvg">
+                        <defs>
+                            <!-- Line Gradient -->
+                            <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="var(--red)" />
+                                <stop offset="55%" stop-color="var(--amber)" />
+                                <stop offset="100%" stop-color="#ffffff" />
+                            </linearGradient>
 
-                    <!-- Main Card Description -->
-                    <p class="card-desc">You have a Product that works. Now you need the BD Engine to grow it. <br><span class="brand-bdaas" style="font-family: var(--sans) !important;">BD<span class="black-char">aa</span>S</span> Launch builds your Go-To-Market and Business Development Infrastructure from scratch.</p>
+                            <!-- Area Gradient -->
+                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(212, 146, 26, 0.25)" />
+                                <stop offset="100%" stop-color="rgba(200, 32, 42, 0.0)" />
+                            </linearGradient>
 
-                    <!-- Stack for the nested cards -->
-                    <div class="sub-card-stack">
-                        <!-- Nested Card 1: Market Enablement -->
-                        <div class="sub-card card-market">
-                            <div class="sub-card-icon">
-                                <img src="img/Without BG Without Name (2).png" alt="Market Enablement">
+                            <!-- Glow Filter -->
+                            <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="6" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+
+                            <!-- Pulse Glow -->
+                            <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+
+                        <!-- Subtle Grid lines -->
+                        <path class="grid-line" d="M 0,280 L 500,280" />
+                        <path class="grid-line" d="M 0,190 L 500,190" />
+                        <path class="grid-line" d="M 0,100 L 500,100" />
+                        
+                        <!-- Shaded Area Under Graph -->
+                        <path class="trajectory-area" d="M 0,330 C 130,330 200,270 300,170 C 390,80 440,40 500,15 L 500,330 L 0,330 Z" fill="url(#areaGradient)" />
+
+                        <!-- Main Trajectory SVG Path -->
+                        <path class="trajectory-line" id="trajectoryPath" d="M 0,330 C 130,330 200,270 300,170 C 390,80 440,40 500,15" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+
+                        <!-- Milestone 1 Node (Market Enablement at x=150, y=295) -->
+                        <g class="milestone-node node-1" id="mNode1">
+                            <circle cx="150" cy="295" r="10" fill="rgba(200, 32, 42, 0.2)" />
+                            <circle cx="150" cy="295" r="5" fill="var(--red)" filter="url(#nodeGlow)" />
+                            <circle cx="150" cy="295" r="2.5" fill="#fff" />
+                        </g>
+
+                        <!-- Milestone 2 Node (BD Enablement at x=300, y=170) -->
+                        <g class="milestone-node node-2" id="mNode2">
+                            <circle cx="300" cy="170" r="12" fill="rgba(212, 146, 26, 0.25)" />
+                            <circle cx="300" cy="170" r="6" fill="var(--amber)" filter="url(#nodeGlow)" />
+                            <circle cx="300" cy="170" r="3" fill="#fff" />
+                        </g>
+
+                        <!-- Milestone 3 Node (Pipeline Management at x=450, y=32) -->
+                        <g class="milestone-node node-3" id="mNode3">
+                            <circle cx="450" cy="32" r="14" fill="rgba(200, 32, 42, 0.3)" />
+                            <circle cx="450" cy="32" r="7" fill="var(--red)" filter="url(#nodeGlow)" />
+                            <circle cx="450" cy="32" r="3.5" fill="#fff" />
+                        </g>
+                    </svg>
+
+                    <!-- Pillars Container -->
+                    <div class="pillars-wrapper">
+                        <!-- Pillar 1: Market Enablement -->
+                        <div class="pillar-group p-market" id="pillar1">
+                            <!-- Milestone Badge floating above -->
+                            <div class="milestone-badge">
+                                <span class="badge-step">STEP 1</span>
+                                <span class="badge-title">Market Enablement</span>
                             </div>
-                            <div class="sub-card-content">
-                                <strong>MARKET ENABLEMENT</strong>
-                                <p>ICP definition, positioning, brand strategy, GTM architecture</p>
+                            
+                            <!-- Pillar Column -->
+                            <div class="pillar-column">
+                                <div class="pillar-top-glow"></div>
+                                <div class="pillar-icon"><img src="img/Without BG Without Name (2).png" alt="Market Enablement"></div>
+                                <div class="pillar-pulse-bar"></div>
+                            </div>
+                            
+                            <!-- Label below -->
+                            <div class="pillar-label">Market Enablement</div>
+
+                            <!-- Popover Tooltip on Hover -->
+                            <div class="pillar-popover">
+                                <div class="popover-title">Phase 1: GTM Architecture</div>
+                                <ul>
+                                    <li>ICP Definition & Targeting</li>
+                                    <li>Brand & Positioning Strategy</li>
+                                    <li>Outreach Playbook Creation</li>
+                                </ul>
                             </div>
                         </div>
 
-                        <!-- Nested Card 2: BD Enablement -->
-                        <div class="sub-card card-bde">
-                            <div class="sub-card-icon">
-                                <img src="img/Without BG Without Name (1).png" alt="BD Enablement">
+                        <!-- Pillar 2: BD Enablement -->
+                        <div class="pillar-group p-bd" id="pillar2">
+                            <!-- Milestone Badge floating above -->
+                            <div class="milestone-badge">
+                                <span class="badge-step">STEP 2</span>
+                                <span class="badge-title">BD Enablement</span>
                             </div>
-                            <div class="sub-card-content">
-                                <strong>BD ENABLEMENT</strong>
-                                <p>2 dedicated BD executives + BDM, outreach systems, pipeline management</p>
+
+                            <!-- Pillar Column -->
+                            <div class="pillar-column">
+                                <div class="pillar-top-glow"></div>
+                                <div class="pillar-icon"><img src="img/Without BG Without Name (1).png" alt="BD Enablement"></div>
+                                <div class="pillar-pulse-bar"></div>
+                            </div>
+
+                            <!-- Label below -->
+                            <div class="pillar-label">BD Enablement</div>
+
+                            <!-- Popover Tooltip on Hover -->
+                            <div class="pillar-popover">
+                                <div class="popover-title">Phase 2: Execution Engine</div>
+                                <ul>
+                                    <li>2 Dedicated BD Executives</li>
+                                    <li>1 Expert BD Manager</li>
+                                    <li>Multi-channel Outbound Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 3: Pipeline Management -->
+                        <div class="pillar-group p-pipe" id="pillar3">
+                            <!-- Milestone Badge floating above -->
+                            <div class="milestone-badge">
+                                <span class="badge-step">STEP 3</span>
+                                <span class="badge-title">Predictable Pipeline</span>
+                            </div>
+
+                            <!-- Pillar Column -->
+                            <div class="pillar-column">
+                                <div class="pillar-top-glow"></div>
+                                <div class="pillar-icon"><img src="img/Without BG Without Name (1).png" alt="Pipeline Management"></div>
+                                <div class="pillar-pulse-bar"></div>
+                            </div>
+
+                            <!-- Label below -->
+                            <div class="pillar-label">Pipeline Management</div>
+
+                            <!-- Popover Tooltip on Hover -->
+                            <div class="pillar-popover">
+                                <div class="popover-title">Phase 3: Scalable Growth</div>
+                                <ul>
+                                    <li>Structured Revenue Funnel</li>
+                                    <li>Deal Nurturing & Follow-ups</li>
+                                    <li>Self-Sustaining BD Function</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
