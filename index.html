@@ -93,9 +93,6 @@
                     <span>Launching BDaaS</span>
                 </div>
                 
-                <!-- Hook Headline -->
-                <div class="hero-hook-headline">Stop Relying on Accidental Sales.</div>
-
                 <div class="hero-headline-group">
                     <h1 class="hero-h1"><span class="bdaas-text"><span>B</span><span>D</span><span class="char-aa">aa</span><span>S</span></span></h1>
                     <div class="hero-subheadline">
@@ -111,7 +108,6 @@
                         <a href="Contact/" class="btn-primary">Book Strategy Call &rarr;</a>
                         <a href="Service/" class="btn-outline">Explore BDaaS Launch</a>
                     </div>
-                    <span class="cta-subtext"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber);margin-right:4px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Free 15-min GTM Assessment &bull; Zero Hiring Overhead</span>
                 </div>
             </div>
 
@@ -123,15 +119,15 @@
                         <defs>
                             <!-- Line Gradient -->
                             <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="var(--red)" />
-                                <stop offset="55%" stop-color="var(--amber)" />
+                                <stop offset="0%" stop-color="var(--amber)" />
+                                <stop offset="55%" stop-color="var(--amber-light)" />
                                 <stop offset="100%" stop-color="#ffffff" />
                             </linearGradient>
 
                             <!-- Area Gradient -->
                             <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                 <stop offset="0%" stop-color="rgba(212, 146, 26, 0.22)" />
-                                <stop offset="100%" stop-color="rgba(200, 32, 42, 0.0)" />
+                                <stop offset="100%" stop-color="rgba(212, 146, 26, 0.0)" />
                             </linearGradient>
 
                             <!-- Glow Filter -->
@@ -153,30 +149,33 @@
                         <path class="grid-line" d="M 0,100 L 500,100" />
                         
                         <!-- Shaded Area Under Graph -->
-                        <path class="trajectory-area" d="M 0,330 C 130,330 200,270 300,170 C 390,80 440,40 500,15 L 500,330 L 0,330 Z" fill="url(#areaGradient)" />
+                        <path class="trajectory-area area-1" d="M 0,320 C 30,320 60,305 92,290 L 92,330 L 0,330 Z" fill="url(#areaGradient)" />
+                        <path class="trajectory-area area-2" d="M 92,290 C 140,265 200,250 250,240 L 250,330 L 92,330 Z" fill="url(#areaGradient)" />
+                        <path class="trajectory-area area-3" d="M 250,240 C 300,230 360,215 408,205 L 408,330 L 250,330 Z" fill="url(#areaGradient)" />
+                        <path class="trajectory-area area-4" d="M 408,205 C 440,165 470,90 500,50 L 500,330 L 408,330 Z" fill="url(#areaGradient)" />
 
                         <!-- Main Trajectory SVG Path -->
-                        <path class="trajectory-line" id="trajectoryPath" d="M 0,330 C 130,330 200,270 300,170 C 390,80 440,40 500,15" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                        <path class="trajectory-line line-1" d="M 0,320 C 30,320 60,305 92,290" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                        <path class="trajectory-line line-2" d="M 92,290 C 140,265 200,250 250,240" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                        <path class="trajectory-line line-3" d="M 250,240 C 300,230 360,215 408,205" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                        <path class="trajectory-line line-4" d="M 408,205 C 440,165 470,90 500,50" fill="none" stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
 
-                        <!-- Milestone 1 Node (Market Enablement at x=150, y=295) -->
+                        <!-- Milestone 1 Node (Market Enablement centered at x=92, y=290) -->
                         <g class="milestone-node node-1" id="mNode1">
-                            <circle cx="150" cy="295" r="10" fill="rgba(200, 32, 42, 0.2)" />
-                            <circle cx="150" cy="295" r="5" fill="var(--red)" filter="url(#nodeGlow)" />
-                            <circle cx="150" cy="295" r="2.5" fill="#fff" />
+                            <circle cx="92" cy="290" r="16" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)" stroke-width="1.5" />
+                            <image href="img/Without BG Without Name (2).png" x="80" y="278" width="24" height="24" />
                         </g>
 
-                        <!-- Milestone 2 Node (BD Enablement at x=300, y=170) -->
+                        <!-- Milestone 2 Node (BD Enablement centered at x=250, y=240) -->
                         <g class="milestone-node node-2" id="mNode2">
-                            <circle cx="300" cy="170" r="12" fill="rgba(212, 146, 26, 0.25)" />
-                            <circle cx="300" cy="170" r="6" fill="var(--amber)" filter="url(#nodeGlow)" />
-                            <circle cx="300" cy="170" r="3" fill="#fff" />
+                            <circle cx="250" cy="240" r="22" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)" stroke-width="2" />
+                            <image href="img/Without BG Without Name (1).png" x="234" y="228" width="32" height="32" />
                         </g>
 
-                        <!-- Milestone 3 Node (Pipeline Management at x=450, y=32) -->
+                        <!-- Milestone 3 Node (Pipeline Management centered at x=408, y=205) -->
                         <g class="milestone-node node-3" id="mNode3">
-                            <circle cx="450" cy="32" r="14" fill="rgba(200, 32, 42, 0.3)" />
-                            <circle cx="450" cy="32" r="7" fill="var(--red)" filter="url(#nodeGlow)" />
-                            <circle cx="450" cy="32" r="3.5" fill="#fff" />
+                            <circle cx="408" cy="205" r="28" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)" stroke-width="2.5" />
+                            <image href="img/Without BG Without Name.png" x="388" y="185" width="40" height="40" />
                         </g>
                     </svg>
 
@@ -189,7 +188,7 @@
 
                             <!-- Floating Metric Pill -->
                             <div class="tower-metric-pill">
-                                <span class="pill-dot"></span>
+                                <span class="pill-dot amber"></span>
                                 <span>GTM Ready</span>
                             </div>
                             
@@ -197,9 +196,7 @@
                             <div class="pillar-column glass-tower">
                                 <div class="tower-glass-facet"></div>
                                 <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal">
-                                    <div class="pillar-icon"><img src="img/Without BG Without Name (2).png" alt="Market Enablement"></div>
-                                </div>
+                                <div class="tower-top-pedestal"></div>
                             </div>
                             
                             <!-- Label below -->
@@ -231,9 +228,7 @@
                             <div class="pillar-column glass-tower">
                                 <div class="tower-glass-facet"></div>
                                 <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal">
-                                    <div class="pillar-icon"><img src="img/Without BG Without Name (1).png" alt="BD Enablement"></div>
-                                </div>
+                                <div class="tower-top-pedestal"></div>
                             </div>
 
                             <!-- Label below -->
@@ -257,7 +252,7 @@
 
                             <!-- Floating Metric Pill -->
                             <div class="tower-metric-pill">
-                                <span class="pill-dot red"></span>
+                                <span class="pill-dot amber"></span>
                                 <span>Revenue Funnel</span>
                             </div>
 
@@ -265,9 +260,7 @@
                             <div class="pillar-column glass-tower">
                                 <div class="tower-glass-facet"></div>
                                 <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal">
-                                    <div class="pillar-icon"><img src="img/Without BG Without Name (1).png" alt="Pipeline Management"></div>
-                                </div>
+                                <div class="tower-top-pedestal"></div>
                             </div>
 
                             <!-- Label below -->
