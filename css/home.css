@@ -605,6 +605,13 @@
             padding-bottom: 4px;
         }
 
+        .popover-body {
+            font-size: 11px;
+            line-height: 1.45;
+            color: var(--ink-soft);
+            font-family: var(--sans);
+        }
+
         .pillar-popover ul {
             list-style: none;
             padding: 0;
