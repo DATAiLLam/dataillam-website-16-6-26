@@ -1386,30 +1386,28 @@ h3,
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 40px;
     position: relative;
-    height: clamp(550px, 45vh, 750px);
-    /* Responsive carousel height */
+    height: auto;
+    padding: 30px 0;
     overflow: visible;
 }
 
 .team-card {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     background: var(--paper-deep);
-    transition: all 0.7s var(--ease);
+    transition: all 0.5s var(--ease);
     cursor: pointer;
-    flex: 0 0 clamp(220px, 15vw, 280px);
-    /* Responsive base card width */
-    height: clamp(300px, 20vw, 400px);
+    flex: 0 0 clamp(290px, 20vw, 380px);
+    height: clamp(420px, 28vw, 550px);
+    box-shadow: 0 15px 35px rgba(26, 20, 14, 0.05);
 }
 
-/* Active card — center enlarged */
-.team-card.active {
-    flex: 0 0 clamp(340px, 22vw, 450px);
-    /* Responsive active card width */
-    height: clamp(480px, 32vw, 620px);
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(26, 20, 14, 0.12);
 }
 
 .team-card-img {
@@ -1429,20 +1427,20 @@ h3,
     transform: scale(1.05);
 }
 
-/* Info overlay — only visible on active */
+/* Info overlay — visible on hover */
 .team-card-info {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px 24px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
     transform: translateY(100%);
     opacity: 0;
-    transition: all 0.5s var(--ease);
+    transition: all 0.4s var(--ease);
 }
 
-.team-card.active .team-card-info {
+.team-card:hover .team-card-info {
     transform: translateY(0);
     opacity: 1;
 }
@@ -1694,22 +1692,25 @@ h3,
         top: 25px;
     }
 
-    /* Team Carousel */
+    /* Team Section stacked */
     .team-carousel {
-        gap: 12px;
-        height: 400px;
+        flex-direction: column;
+        gap: 28px;
+        height: auto;
+        padding: 10px 0;
     }
 
-    /* Locked for mobile */
     .team-card {
-        flex: 0 0 100px;
-        height: 180px;
-        border-radius: 12px;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+        height: 450px;
+        border-radius: 16px;
     }
 
-    .team-card.active {
-        flex: 0 0 200px;
-        height: 340px;
+    .team-card-info {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .team-name {
@@ -1773,18 +1774,15 @@ h3,
     }
 
     .team-carousel {
-        gap: 8px;
-        min-height: 320px;
+        gap: 20px;
+        height: auto;
     }
 
     .team-card {
-        flex: 0 0 75px;
-        height: 150px;
-    }
-
-    .team-card.active {
-        flex: 0 0 160px;
-        height: 280px;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 280px;
+        height: 400px;
     }
 
 
@@ -1905,19 +1903,15 @@ h3,
     }
 
     .team-carousel {
-        gap: 24px;
-        height: 700px;
+        gap: 48px;
+        height: auto;
+        padding: 50px 0;
     }
 
     .team-card {
-        flex: 0 0 280px;
-        height: 450px;
-        border-radius: 20px;
-    }
-
-    .team-card.active {
-        flex: 0 0 450px;
+        flex: 0 0 420px;
         height: 600px;
+        border-radius: 24px;
     }
 
     /* 6. BDaaS Steps */
@@ -2094,19 +2088,15 @@ h3,
     }
 
     .team-carousel {
-        gap: 32px;
-        height: 900px;
+        gap: 56px;
+        height: auto;
+        padding: 60px 0;
     }
 
     .team-card {
-        flex: 0 0 350px;
-        height: 600px;
-        border-radius: 28px;
-    }
-
-    .team-card.active {
-        flex: 0 0 550px;
-        height: 800px;
+        flex: 0 0 520px;
+        height: 750px;
+        border-radius: 30px;
     }
 
     .team-name {
@@ -2329,19 +2319,15 @@ h3,
     }
 
     .team-carousel {
-        gap: 40px;
-        height: 1200px;
+        gap: 64px;
+        height: auto;
+        padding: 80px 0;
     }
 
     .team-card {
-        flex: 0 0 450px;
-        height: 800px;
+        flex: 0 0 620px;
+        height: 900px;
         border-radius: 36px;
-    }
-
-    .team-card.active {
-        flex: 0 0 650px;
-        height: 1100px;
     }
 
     .team-info {
