@@ -26,12 +26,13 @@
     <meta name="twitter:image" content="https://www.dataillam.com/img/Without%20BG%20Without%20Name.png">
     <link rel="canonical" href="https://www.dataillam.com/Bdaas/">
     <meta name="robots" content="index, follow">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="../img/SME_→_MNC_Growth_Transformation_202605191212.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="../css/bdaas.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" href="../img/Without BG Without Name.png" />
 </head>
@@ -96,7 +97,10 @@
         <div class="container relative z-10">
             <div class="hero-visual-container">
                 <div class="hero-visual-card">
-                    <img src="../img/SME_→_MNC_Growth_Transformation_202605191212.webp" alt="Strategic Pipeline Building">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="../img/SME_MNC_Growth_mobile.webp">
+                        <img src="../img/SME_→_MNC_Growth_Transformation_202605191212.webp" alt="Strategic Pipeline Building">
+                    </picture>
 
                     <div class="hero-card-content">
                         <h1 class="hero-h1 bdaas-hero-title">
@@ -183,7 +187,7 @@
     <!-- ─── STRUCTURE PROBLEM SECTION (Cinematic Redesign) ─── -->
     <section class="structure-section reveal">
         <div class="structure-bg-visual">
-            <img src="../img/Create_new_image_using_people_202605291511.webp" alt="Strategic business discussions">
+            <img src="../img/Create_new_image_using_people_202605291511.webp" alt="Strategic business discussions" loading="lazy">
         </div>
 
         <div class="structure-content-wrapper">
@@ -253,7 +257,7 @@
                             </div>
                         </div>
                         <div class="resource-visual">
-                            <img src="../img/White Paper Cover Image.webp" alt="BDaaS Whitepaper Cover">
+                            <img src="../img/White Paper Cover Image.webp" alt="BDaaS Whitepaper Cover" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -277,7 +281,7 @@
                             </div>
                         </div>
                         <div class="resource-visual">
-                            <img src="../img/Newsletter Cover Image.webp" alt="Newsletter Cover">
+                            <img src="../img/Newsletter Cover Image.webp" alt="Newsletter Cover" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -293,7 +297,7 @@
                         <!-- Card 1 -->
                         <div class="article-card">
                             <div class="article-img">
-                                <img src="../img/Article 1.webp" alt="Article 1">
+                                <img src="../img/Article 1.webp" alt="Article 1" loading="lazy">
                             </div>
                             <div class="article-body">
                                 <span class="article-category">Strategy</span>
@@ -306,7 +310,7 @@
                         <!-- Card 2 -->
                         <div class="article-card">
                             <div class="article-img">
-                                <img src="../img/Article 2.webp" alt="Article 2">
+                                <img src="../img/Article 2.webp" alt="Article 2" loading="lazy">
                             </div>
                             <div class="article-body">
                                 <span class="article-category">Outbound</span>
@@ -320,7 +324,7 @@
                         <!-- Card 3 -->
                         <div class="article-card">
                             <div class="article-img">
-                                <img src="../img/Article 3.webp" alt="Article 3">
+                                <img src="../img/Article 3.webp" alt="Article 3" loading="lazy">
                             </div>
                             <div class="article-body">
                                 <span class="article-category">Audit</span>
@@ -333,7 +337,7 @@
                         <!-- Card 4 -->
                         <div class="article-card">
                             <div class="article-img">
-                                <img src="../img/Article 4.webp" alt="Article 4">
+                                <img src="../img/Article 4.webp" alt="Article 4" loading="lazy">
                             </div>
                             <div class="article-body">
                                 <span class="article-category">Growth</span>
@@ -503,7 +507,7 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
     <script src="../js/bdaas.js" defer></script>
     <script src="../js/navbar.js" defer></script>
 </body>

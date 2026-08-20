@@ -28,10 +28,9 @@
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="img/wmremove-transformed (1).webp" as="image">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="img/wmremove-transformed (1).webp" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -277,7 +276,10 @@
         <div class="story-grid">
             <div class="story-img-area slide-l">
                 <div class="story-img-main">
-                    <img src="img/Our story.webp" alt="DATAiLLAM Team at Work"loading="lazy">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="img/Our_story_mobile.webp">
+                        <img src="img/Our story.webp" alt="DATAiLLAM Team at Work" loading="lazy">
+                    </picture>
                 </div>
             </div>
             <div class="slide-r" style="transition-delay:0.1s">
@@ -373,7 +375,7 @@
                     <div class="bdaas-items">
                         <div class="bdaas-item active" id="btn-launch" onclick="selectVideo('launch')">
                             <div class="bdaas-item-icon">
-                                <img src="img/Without BG Without Name (1).png" alt="Logo">
+                                <img src="img/Without BG Without Name (1).png" alt="Logo" loading="lazy">
                             </div>
                             <div class="bdaas-item-content">
                                 <strong><span style="color: var(--red   )">B</span><span style="color: var(--red)">D</span>aa<span style="color: var(--red)">S</span> Launch</strong>
@@ -381,7 +383,7 @@
                             </div>
                         </div>
                         <div class="bdaas-item" id="btn-market" onclick="selectVideo('market')">
-                            <div class="bdaas-item-icon"><img src="img/Without BG Without Name (2).png" alt="Logo">
+                            <div class="bdaas-item-icon"><img src="img/Without BG Without Name (2).png" alt="Logo" loading="lazy">
                             </div>
                             <div class="bdaas-item-content">
                                 <strong>Market Enablement</strong>
@@ -389,7 +391,7 @@
                             </div>
                         </div>
                         <div class="bdaas-item" id="btn-bd" onclick="selectVideo('bd')">
-                            <div class="bdaas-item-icon"><img src="img/Without BG Without Name (1).png" alt="Logo">
+                            <div class="bdaas-item-icon"><img src="img/Without BG Without Name (1).png" alt="Logo" loading="lazy">
                             </div>
                             <div class="bdaas-item-content">
                                 <strong>BD Enablement</strong>
