@@ -37,7 +37,7 @@
             href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home.css?v=1.9">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="icon" href="img/Without BG Without Name.png" />
@@ -45,159 +45,170 @@
 
 <body class="">
 
-
-
-    <!-- ─── UNIFIED NAV ─── -->
-    <nav id="mainNav">
+    <!-- Main Navigation Header -->
+    <header id="mainNav">
         <div class="nav-inner">
-            <a href="./" class="logo">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
                 <div class="logo-img-wrapper">
-                    <img src="img/Without BG Without Name.png" alt="DATAiLLAM Logo" class="logo-img">
+                    <img src="img/Without BG Without Name.png" alt="DATAiLLAM Symbol" class="logo-img">
                 </div>
                 <div class="brand-group">
                     <span class="logo-text">DATA<span>i</span>LLAM</span>
                     <span class="brand-sub">PRIVATE LIMITED</span>
                 </div>
             </a>
+
+            <!-- Desktop Links -->
             <ul class="nav-links">
-                <li><a href="./" class="nav-link" data-page="home">Home</a></li>
-                <li><a href="About/" class="nav-link" data-page="about">About</a></li>
-                <li><a href="Service/" class="nav-link" data-page="service">Service</a></li>
-                <li><a href="Bdaas/" class="nav-link" data-page="bdaas"> <span
-                            class="bdaas-text"><span>B</span><span>D</span>aa<span>S</span></span> </a></li>
-                <li><a href="Contact/" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="service.html" class="nav-link">Service</a></li>
+                <li><a href="bdaas.html" class="nav-link"><span class="bdaas-text">BD<span>aa</span>S</span></a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <a href="Contact/" class="btn-nav">Join Now</a>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
+
+            <!-- CTA Button -->
+            <a href="contact.html" class="btn-nav">Join Now</a>
+
+            <!-- Hamburger Icon (Mobile) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
-    </nav>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="./" class="mob-link" data-page="home">Home</a>
-        <a href="About/" class="mob-link" data-page="about">About</a>
-        <a href="Service/" class="mob-link" data-page="service">Service</a>
-        <a href="Bdaas/" class="mob-link" data-page="bdaas"> <span
-                class="bdaas-text"><span>B</span><span>D</span>aa<span>S</span></span> </a>
-        <a href="Contact/" class="mob-link" data-page="contact">Contact</a>
-        <a href="Contact/" class="btn-mob">Join Now</a>
+        <a href="index.html" class="mob-link active">Home</a>
+        <a href="about.html" class="mob-link">About</a>
+        <a href="service.html" class="mob-link">Service</a>
+        <a href="bdaas.html" class="mob-link"><span class="bdaas-text">BD<span>aa</span>S</span></a>
+        <a href="contact.html" class="mob-link">Contact</a>
+        <a href="contact.html" class="btn-mob">Join Now</a>
     </div>
 
-    <!-- ─── HERO SECTION ─── -->
-    <section class="hero">
-        <!-- Systems Blueprint Background -->
-        <div class="hero-blueprint-bg">
-            <div class="blueprint-grid"></div>
-            <div class="blueprint-glow"></div>
-        </div>
-
-        <div class="hero-container">
-            <!-- LEFT CONTENT -->
-            <div class="hero-content hero-anim-text">
-                <div class="hero-badge">
-                    <div class="hero-badge-dot"></div>
-                    <span>Launching</span>
-                </div>
-
-                <div class="hero-headline-group">
-                    <h1 class="hero-h1"><span class="bdaas-text"><span>B</span><span>D</span><span
-                                class="char-aa">aa</span><span>S</span></span></h1>
-                    <div class="hero-subheadline">
-                        <span class="bdaas-full-text"><span>B</span>usiness <span>D</span>evelopment <span>a</span>s
-                            <span>a</span> <span>S</span>ervice</span>
-                    </div>
-                </div>
-
-                <p class="hero-tagline-desc">Business Development is not Sales. It's the system behind Sales. <br
-                        class="br-2000">DATA<span style="color: var(--red);">i</span>LLAM builds and operates that
-                    system for Growth-Stage Startups and SMEs through a model called BDaaS.</p>
-
-                <!-- CTA Wrap -->
-                <div class="hero-actions-wrap">
-                    <div class="hero-actions">
-                        <a href="Contact/" class="btn-primary">Book Strategy Call &rarr;</a>
-                        <a href="Service/" class="btn-outline">Explore Launch</a>
-                    </div>
-                </div>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <!-- Blueprint Grid Background -->
+            <div class="hero-blueprint-bg">
+                <div class="blueprint-grid"></div>
+                <div class="blueprint-glow"></div>
             </div>
 
-            <!-- RIGHT VISUAL (3D GLASS TOWER GROWTH ENGINE) -->
-            <div class="hero-visual hero-anim-card">
-                <div class="growth-trajectory-container idled" id="growthContainer">
-                    <!-- SVG Graph Canvas -->
-                    <svg class="growth-graph" viewBox="0 0 500 360" preserveAspectRatio="none" id="growthSvg">
-                        <defs>
-                            <!-- Line Gradient -->
-                            <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="var(--amber)" />
-                                <stop offset="55%" stop-color="var(--amber-light)" />
-                                <stop offset="100%" stop-color="#ffffff" />
-                            </linearGradient>
+            <div class="hero-container">
+                <!-- Left: Animated Blueprint Typography & CTAs -->
+                <div class="hero-content hero-anim-text">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        <span>Launching</span>
+                    </div>
 
-                            <!-- Area Gradient -->
-                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="rgba(212, 146, 26, 0.22)" />
-                                <stop offset="100%" stop-color="rgba(212, 146, 26, 0.0)" />
-                            </linearGradient>
+                    <div class="hero-headline-group">
+                        <h1 class="hero-h1">
+                            <span class="bdaas-text">BD<span class="char-aa">aa</span>S</span>
+                        </h1>
+                        <h2 class="hero-subheadline">
+                            <span class="bdaas-full-text"><span>B</span>usiness <span>D</span>evelopment <span>as
+                                    a</span> <span>S</span>ervice</span>
+                        </h2>
+                    </div>
 
-                            <!-- Glow Filter -->
-                            <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="6" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
+                    <p class="hero-tagline-desc">
+                        Business Development is not Sales. It's the system behind Sales. DATA<span
+                            class="brand-bdaas"><span class="black-char">i</span></span>LLAM builds and operates that
+                        system for Growth-Stage Startups and SMEs through a model called BDaas.
+                    </p>
 
-                            <!-- Pulse Glow -->
-                            <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
+                    <div class="hero-actions-wrap">
+                        <div class="hero-actions">
+                            <a href="contact.html" class="btn-primary">Book Strategy Call &rarr;</a>
+                            <a href="bdaas.html" class="btn-outline">Explore Launch</a>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Subtle Grid lines -->
-                        <path class="grid-line" d="M 0,280 L 500,280" />
-                        <path class="grid-line" d="M 0,190 L 500,190" />
-                        <path class="grid-line" d="M 0,100 L 500,100" />
+                <!-- RIGHT VISUAL (3D GLASS TOWER GROWTH ENGINE) -->
+                <div class="hero-visual hero-anim-card">
+                    <div class="growth-trajectory-container idled" id="growthContainer">
+                        <!-- SVG Graph Canvas -->
+                        <svg class="growth-graph" viewBox="0 0 500 360" preserveAspectRatio="none" id="growthSvg">
+                            <defs>
+                                <!-- Line Gradient -->
+                                <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="var(--amber)" />
+                                    <stop offset="55%" stop-color="var(--amber-light)" />
+                                    <stop offset="100%" stop-color="#ffffff" />
+                                </linearGradient>
 
-                        <!-- Shaded Area Under Graph -->
-                        <path class="trajectory-area area-1" d="M 0,320 C 30,320 60,305 92,290 L 92,330 L 0,330 Z"
-                            fill="url(#areaGradient)" />
-                        <path class="trajectory-area area-2" d="M 92,290 C 140,265 200,250 250,240 L 250,330 L 92,330 Z"
-                            fill="url(#areaGradient)" />
-                        <path class="trajectory-area area-3"
-                            d="M 250,240 C 300,215 360,205 408,205 L 408,330 L 250,330 Z" fill="url(#areaGradient)" />
-                        <path class="trajectory-area area-4" d="M 408,205 C 440,165 470,90 500,50 L 500,330 L 408,330 Z"
-                            fill="url(#areaGradient)" />
+                                <!-- Area Gradient -->
+                                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(212, 146, 26, 0.22)" />
+                                    <stop offset="100%" stop-color="rgba(212, 146, 26, 0.0)" />
+                                </linearGradient>
 
-                        <!-- Main Trajectory SVG Path -->
-                        <path class="trajectory-line line-1" d="M 0,320 C 30,320 60,305 92,290" fill="none"
-                            stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
-                        <path class="trajectory-line line-2" d="M 92,290 C 140,265 200,250 250,240" fill="none"
-                            stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
-                        <path class="trajectory-line line-3" d="M 250,240 C 300,215 360,205 408,205" fill="none"
-                            stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
-                        <path class="trajectory-line line-4" d="M 408,205 C 440,165 470,90 500,50" fill="none"
-                            stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                                <!-- Glow Filter -->
+                                <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="6" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
 
-                        <!-- Milestone 1 Node (Market Enablement centered at x=92, y=290) -->
-                        <g class="milestone-node node-1" id="mNode1">
-                            <circle cx="92" cy="290" r="16" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
-                                stroke-width="1.5" />
-                            <image href="img/Without BG Without Name (2).png" x="80" y="278" width="24" height="24" />
-                        </g>
+                                <!-- Pulse Glow -->
+                                <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="5" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
 
-                        <!-- Milestone 2 Node (BD Enablement centered at x=250, y=240) -->
-                        <g class="milestone-node node-2" id="mNode2">
-                            <circle cx="250" cy="240" r="22" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
-                                stroke-width="2" />
-                            <image href="img/Without BG Without Name (1).png" x="234" y="228" width="32" height="32" />
-                        </g>
+                            <!-- Subtle Grid lines -->
+                            <path class="grid-line" d="M 0,280 L 500,280" />
+                            <path class="grid-line" d="M 0,190 L 500,190" />
+                            <path class="grid-line" d="M 0,100 L 500,100" />
 
-                        <!-- Milestone 3 Node (Pipeline Management centered at x=408, y=205) -->
-                        <g class="milestone-node node-3" id="mNode3">
-                            <circle cx="408" cy="205" r="28" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
-                                stroke-width="2.5" />
-                            <image href="img/Without BG Without Name.png" x="388" y="185" width="40" height="40" />
-                        </g>
+                            <!-- Shaded Area Under Graph -->
+                            <path class="trajectory-area area-1" d="M 0,320 C 30,320 60,305 92,290 L 92,330 L 0,330 Z"
+                                fill="url(#areaGradient)" />
+                            <path class="trajectory-area area-2" d="M 92,290 C 140,265 200,250 250,240 L 250,330 L 92,330 Z"
+                                fill="url(#areaGradient)" />
+                            <path class="trajectory-area area-3"
+                                d="M 250,240 C 300,215 360,205 408,205 L 408,330 L 250,330 Z" fill="url(#areaGradient)" />
+                            <path class="trajectory-area area-4" d="M 408,205 C 440,165 470,90 500,50 L 500,330 L 408,330 Z"
+                                fill="url(#areaGradient)" />
+
+                            <!-- Main Trajectory SVG Path -->
+                            <path class="trajectory-line line-1" d="M 0,320 C 30,320 60,305 92,290" fill="none"
+                                stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                            <path class="trajectory-line line-2" d="M 92,290 C 140,265 200,250 250,240" fill="none"
+                                stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                            <path class="trajectory-line line-3" d="M 250,240 C 300,215 360,205 408,205" fill="none"
+                                stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+                            <path class="trajectory-line line-4" d="M 408,205 C 440,165 470,90 500,50" fill="none"
+                                stroke="url(#lineGradient)" stroke-width="5" filter="url(#lineGlow)" />
+
+                            <!-- Milestone 1 Node (Market Enablement centered at x=92, y=290) -->
+                            <g class="milestone-node node-1" id="mNode1">
+                                <circle cx="92" cy="290" r="16" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
+                                    stroke-width="1.5" />
+                                <image href="img/Without BG Without Name (2).png" x="80" y="278" width="24" height="24" />
+                            </g>
+
+                            <!-- Milestone 2 Node (BD Enablement centered at x=250, y=240) -->
+                            <g class="milestone-node node-2" id="mNode2">
+                                <circle cx="250" cy="240" r="22" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
+                                    stroke-width="2" />
+                                <image href="img/Without BG Without Name (1).png" x="234" y="224" width="32" height="32" />
+                            </g>
+
+                            <!-- Milestone 3 Node (Pipeline Management centered at x=408, y=205) -->
+                            <g class="milestone-node node-3" id="mNode3">
+                                <circle cx="408" cy="205" r="28" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
+                                    stroke-width="2.5" />
+                                <image href="img/Without BG Without Name.png" x="388" y="185" width="40" height="40" />
+                            </g>
                     </svg>
 
                     <!-- 3D Glass Towers Wrapper -->

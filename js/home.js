@@ -41,10 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
             growthContainer.classList.add('active');
         }
 
+        let initialLoad = true;
         const growthObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    triggerTrajectoryAnimation();
+                    if (initialLoad) {
+                        initialLoad = false;
+                        // Delay by 150ms on first load to allow browser paint default hidden states
+                        setTimeout(triggerTrajectoryAnimation, 150);
+                    } else {
+                        triggerTrajectoryAnimation();
+                    }
                 }
             });
         }, { threshold: 0.2 });
