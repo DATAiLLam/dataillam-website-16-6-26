@@ -3,7 +3,7 @@
    ════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger') || document.getElementById('hamburgerBtn') || document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mainNav = document.getElementById('mainNav');
 

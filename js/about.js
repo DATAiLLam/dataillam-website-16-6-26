@@ -300,14 +300,99 @@ $(document).ready(function () {
     var jcNode = document.getElementById('journeyCarousel');
     if (jcNode) journeyObserver.observe(jcNode);
 
-    // Pause autoplay on hover
-    $('#journeyCarousel, .timeline-wrapper').on('mouseenter', function () {
-        stopAutoPlay();
-    }).on('mouseleave', function () {
-        startAutoPlay();
+    // ═══════════════════════════════════════════════
+    // TEAM SPLIT SHOWCASE — 3-Second Auto Rotator
+    // ═══════════════════════════════════════════════
+    var teamData = [
+        { badge: 'FOUNDER & CEO', num: '01 / 02' },
+        { badge: 'HEAD OPERATIONS', num: '02 / 02' }
+    ];
+    var currentTeamIndex = 0;
+    var teamTimer = null;
+    var TEAM_INTERVAL = 3000; // 3 seconds
+
+    function resetTimerBar() {
+        var $bar = $('#teamTimerBar');
+        $bar.stop().css('width', '0%').animate({ width: '100%' }, TEAM_INTERVAL, 'linear');
+    }
+
+    function switchTeamMember(targetIndex) {
+        if (targetIndex === currentTeamIndex && $('#teamImg' + targetIndex).hasClass('active')) return;
+
+        var $prevImg = $('#teamImg' + currentTeamIndex);
+        var $nextImg = $('#teamImg' + targetIndex);
+
+        var $prevCard = $('#teamCard' + currentTeamIndex);
+        var $nextCard = $('#teamCard' + targetIndex);
+
+        currentTeamIndex = targetIndex;
+
+        // Update Dots
+        $('.team-dot').removeClass('active');
+        $('.team-dot[data-index="' + targetIndex + '"]').addClass('active');
+
+        // Update Badge & Num
+        $('#teamBadge').text(teamData[targetIndex].badge);
+        $('#teamNum').text(teamData[targetIndex].num);
+
+        // Transition Images
+        $('.split-exec-img').removeClass('active').css({ opacity: 0, transform: 'scale(0.96)' });
+        $nextImg.addClass('active').css({ opacity: 1, transform: 'scale(1)' });
+
+        // Transition Details Cards
+        $('.split-details-card').removeClass('active').css({ opacity: 0, transform: 'translateY(15px)', position: 'absolute', top: 0, left: 0, width: '100%' });
+        $nextCard.addClass('active').css({ opacity: 1, transform: 'translateY(0)', position: 'relative', top: 'auto', left: 'auto', width: '100%' });
+
+        resetTimerBar();
+    }
+
+    function nextTeamMember() {
+        var next = (currentTeamIndex + 1) % teamData.length;
+        switchTeamMember(next);
+    }
+
+    function startTeamAutoPlay() {
+        stopTeamAutoPlay();
+        resetTimerBar();
+        teamTimer = setInterval(nextTeamMember, TEAM_INTERVAL);
+    }
+
+    function stopTeamAutoPlay() {
+        if (teamTimer) {
+            clearInterval(teamTimer);
+            teamTimer = null;
+        }
+        $('#teamTimerBar').stop().css('width', '0%');
+    }
+
+    // Indicator Click
+    $('.team-dot').on('click', function () {
+        var idx = parseInt($(this).data('index'));
+        switchTeamMember(idx);
+        startTeamAutoPlay();
     });
 
+    // Pause on Hover
+    $('#teamSplitShowcase').on('mouseenter', function () {
+        stopTeamAutoPlay();
+    }).on('mouseleave', function () {
+        startTeamAutoPlay();
+    });
 
+    // Start auto-play when visible
+    if ('IntersectionObserver' in window) {
+        var teamObserver = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                startTeamAutoPlay();
+            } else {
+                stopTeamAutoPlay();
+            }
+        }, { threshold: 0.2 });
 
+        var teamNode = document.getElementById('teamSplitShowcase');
+        if (teamNode) teamObserver.observe(teamNode);
+    } else {
+        startTeamAutoPlay();
+    }
 
 });
