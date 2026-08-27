@@ -331,8 +331,7 @@ $(document).ready(function () {
         $('.team-dot').removeClass('active');
         $('.team-dot[data-index="' + targetIndex + '"]').addClass('active');
 
-        // Update Badge & Num
-        $('#teamBadge').text(teamData[targetIndex].badge);
+        // Update Num
         $('#teamNum').text(teamData[targetIndex].num);
 
         // Transition Images
