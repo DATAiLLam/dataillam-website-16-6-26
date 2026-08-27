@@ -17,9 +17,9 @@ Options -Indexes
     RewriteCond %{HTTP_HOST} ^dataillam\.com [NC]
     RewriteRule ^(.*)$ https://www.dataillam.com/$1 [L,R=301]
 
-    # Remove index.html from URLs for SEO
+    # Remove index.html from URLs for SEO (preserves current host/subdomain)
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.html\ HTTP/
-    RewriteRule ^(([^/]+/)*)index\.html$ https://www.dataillam.com/$1 [R=301,L]
+    RewriteRule ^(([^/]+/)*)index\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
 # ----------------------------------------------------------------------
