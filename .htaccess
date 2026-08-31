@@ -13,8 +13,8 @@ Options -Indexes
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
-    # Force WWW (Matches your canonical URLs)
-    RewriteCond %{HTTP_HOST} ^dataillam\.com [NC]
+    # Force WWW only for main domain (does NOT affect subdomains)
+    RewriteCond %{HTTP_HOST} ^dataillam\.com$ [NC]
     RewriteRule ^(.*)$ https://www.dataillam.com/$1 [L,R=301]
 
     # Remove index.html from URLs for SEO (preserves current host/subdomain)
