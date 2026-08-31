@@ -56,63 +56,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Active Page Highlighting Logic
-    const currentPath = window.location.pathname.toLowerCase();
-    let pageName = 'home';
-    
-    if (currentPath.includes('/about')) {
-        pageName = 'about';
-    } else if (currentPath.includes('/service')) {
-        pageName = 'service';
-    } else if (currentPath.includes('/bdaas')) {
-        pageName = 'bdaas';
-    } else if (currentPath.includes('/contact')) {
-        pageName = 'contact';
+    function highlightActivePage() {
+        const currentPath = window.location.pathname.toLowerCase();
+        let pageName = 'home';
+        
+        if (currentPath.includes('/about')) {
+            pageName = 'about';
+        } else if (currentPath.includes('/service')) {
+            pageName = 'service';
+        } else if (currentPath.includes('/bdaas')) {
+            pageName = 'bdaas';
+        } else if (currentPath.includes('/contact')) {
+            pageName = 'contact';
+        }
+
+        // Clear active class from all nav & mob links first
+        document.querySelectorAll('.nav-link, .mob-link').forEach(l => l.classList.remove('active'));
+
+        // Find all links with data-page attribute matching current page
+        const navLinks = document.querySelectorAll(`.nav-link[data-page="${pageName}"]`);
+        const mobLinks = document.querySelectorAll(`.mob-link[data-page="${pageName}"]`);
+
+        navLinks.forEach(link => link.classList.add('active'));
+        mobLinks.forEach(link => link.classList.add('active'));
     }
 
-    // Find all links with data-page attribute matching current page
-    const navLinks = document.querySelectorAll(`.nav-link[data-page="${pageName}"]`);
-    const mobLinks = document.querySelectorAll(`.mob-link[data-page="${pageName}"]`);
+    highlightActivePage();
 
-    navLinks.forEach(link => link.classList.add('active'));
-    mobLinks.forEach(link => link.classList.add('active'));
-
-    // 2b. Immediate Click Highlight Feedback for Nav Links & Buttons
-    const allNavLinks = document.querySelectorAll('.nav-link, .mob-link');
-    
-    allNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            allNavLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
-    const allButtons = document.querySelectorAll('a[href]');
-    allButtons.forEach(btn => {
+    // 2b. Internal Page Navigation Click Feedback
+    const allInternalLinks = document.querySelectorAll('a[href]');
+    allInternalLinks.forEach(btn => {
         btn.addEventListener('click', function() {
-            const href = this.getAttribute('href').toLowerCase();
+            const rawHref = this.getAttribute('href') || '';
+            const href = rawHref.trim().toLowerCase();
+
+            // Ignore external links, anchor targets, mailto, tel, and blank targets
+            if (
+                !href ||
+                href.startsWith('http://') ||
+                href.startsWith('https://') ||
+                href.startsWith('//') ||
+                href.startsWith('#') ||
+                href.startsWith('mailto:') ||
+                href.startsWith('tel:') ||
+                this.getAttribute('target') === '_blank'
+            ) {
+                return; // External or non-nav link: do NOT alter active navbar indicator!
+            }
+
             let targetPage = '';
-            
-            if (href.includes('about')) {
+            if (href.includes('/about') || href.includes('about/')) {
                 targetPage = 'about';
-            } else if (href.includes('service')) {
+            } else if (href.includes('/service') || href.includes('service/')) {
                 targetPage = 'service';
-            } else if (href.includes('bdaas')) {
+            } else if (href.includes('/bdaas') || href.includes('bdaas/')) {
                 targetPage = 'bdaas';
-            } else if (href.includes('contact')) {
+            } else if (href.includes('/contact') || href.includes('contact/')) {
                 targetPage = 'contact';
-            } else if (href.includes('index.html') || href === '/' || href === './' || href.includes('home') || href.endsWith('rehost-dataillam') || href.endsWith('rehost-dataillam/')) {
+            } else if (href === '../' || href === './' || href === '/' || href.includes('index.html')) {
                 targetPage = 'home';
             }
-            
+
             if (targetPage) {
-                const targetNavLinks = document.querySelectorAll(`.nav-link[data-page="${targetPage}"]`);
-                const targetMobLinks = document.querySelectorAll(`.mob-link[data-page="${targetPage}"]`);
-                
-                if (targetNavLinks.length > 0 || targetMobLinks.length > 0) {
-                    allNavLinks.forEach(l => l.classList.remove('active'));
-                    targetNavLinks.forEach(l => l.classList.add('active'));
-                    targetMobLinks.forEach(l => l.classList.add('active'));
-                }
+                document.querySelectorAll('.nav-link, .mob-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll(`.nav-link[data-page="${targetPage}"]`).forEach(l => l.classList.add('active'));
+                document.querySelectorAll(`.mob-link[data-page="${targetPage}"]`).forEach(l => l.classList.add('active'));
             }
         });
     });

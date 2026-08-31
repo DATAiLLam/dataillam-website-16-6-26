@@ -2,67 +2,87 @@ $(document).ready(function () {
     
     // ── Hero Section Entrance Animation ──
     function animateHero() {
+        const $badge = $('.hero-badge');
         const $title = $('.hero-title');
-        const $textBlock = $('.text-content-wrap');
-        const $visualBlock = $('.visual-blob-card');
         const $desc = $('.hero-desc');
-        const $descEmp = $('.hero-desc-emphasis');
+        const $empBox = $('.hero-emphasis-box');
         const $actions = $('.hero-actions-new');
+        const $visualBlock = $('.visual-blob-card');
+        const $glassBadges = $('.glass-badge');
 
         // Set initial states
-        $title.css({ opacity: 0, transform: 'translateY(30px)' });
+        $badge.css({ opacity: 0, transform: 'translateY(15px)' });
+        $title.css({ opacity: 0, transform: 'translateY(25px)' });
         $desc.css({ opacity: 0, transform: 'translateY(20px)' });
-        $descEmp.css({ opacity: 0, transform: 'translateY(20px)' });
+        $empBox.css({ opacity: 0, transform: 'translateY(20px)' });
         $actions.css({ opacity: 0, transform: 'translateY(20px)' });
-        $textBlock.css({ opacity: 0, transform: 'translateX(-50px)' });
-        $visualBlock.css({ opacity: 0, transform: 'scale(0.8) rotate(-5deg)', transition: 'none' });
+        $visualBlock.css({ opacity: 0, transform: 'scale(0.95) translateY(15px)', transition: 'none' });
+        $glassBadges.css({ opacity: 0, transform: 'scale(0.8)' });
 
-        // 1. Heading
+        // 1. Eyebrow Badge
+        setTimeout(() => {
+            $badge.animate({ opacity: 1 }, {
+                step: function(now) { $(this).css('transform', `translateY(${15 * (1 - now)}px)`); },
+                duration: 500
+            });
+        }, 50);
+
+        // 2. Heading
         setTimeout(() => {
             $title.animate({ opacity: 1 }, {
-                step: function(now, fx) {
-                    $(this).css('transform', `translateY(${30 * (1 - now)}px)`);
-                },
+                step: function(now) { $(this).css('transform', `translateY(${25 * (1 - now)}px)`); },
                 duration: 600
             });
-        }, 100);
+        }, 150);
 
-        // 2. Image Card (Visual Block)
+        // 3. Image Card (Visual Block)
         setTimeout(() => {
             $visualBlock.animate({ opacity: 1 }, {
-                step: function(now, fx) {
-                    const scale = 0.8 + (0.2 * now);
-                    const rotate = -5 * (1 - now);
-                    $(this).css('transform', `scale(${scale}) rotate(${rotate}deg)`);
+                step: function(now) {
+                    const scale = 0.95 + (0.05 * now);
+                    const transY = 15 * (1 - now);
+                    $(this).css('transform', `scale(${scale}) translateY(${transY}px)`);
                 },
-                duration: 800,
+                duration: 700,
                 complete: function() {
-                    // Re-enable CSS transitions after entrance animation is done
-                    $(this).css('transition', '');
+                    $(this).css({ 'transition': '', 'transform': '' });
                 }
             });
-        }, 300);
+        }, 250);
 
-        // 3. Descriptions (Staggered)
+        // 4. Floating Glass Badges
+        setTimeout(() => {
+            $glassBadges.animate({ opacity: 1 }, {
+                step: function(now) {
+                    const scale = 0.8 + (0.2 * now);
+                    $(this).css('transform', `scale(${scale})`);
+                },
+                duration: 600,
+                complete: function() {
+                    $(this).css({ 'transform': '' });
+                }
+            });
+        }, 600);
+
+        // 5. Descriptions, Emphasis & Actions
         setTimeout(() => {
             $desc.animate({ opacity: 1 }, {
                 step: function(now) { $(this).css('transform', `translateY(${20 * (1 - now)}px)`); },
-                duration: 600
+                duration: 500
             });
         }, 300);
 
         setTimeout(() => {
-            $descEmp.animate({ opacity: 1 }, {
+            $empBox.animate({ opacity: 1 }, {
                 step: function(now) { $(this).css('transform', `translateY(${20 * (1 - now)}px)`); },
-                duration: 600
+                duration: 500
             });
         }, 400);
 
-        // 4. Buttons
         setTimeout(() => {
             $actions.animate({ opacity: 1 }, {
                 step: function(now) { $(this).css('transform', `translateY(${20 * (1 - now)}px)`); },
-                duration: 600
+                duration: 500
             });
         }, 500);
     }

@@ -96,13 +96,9 @@ window.toggleFaq = function(element) {
     }
 };
 
-// --- VIDEO SELECTOR & AUTOPLAY ---
+// --- VIDEO SELECTOR ---
 (function() {
-    const videoTypes = ['launch', 'market', 'bd'];
-    let currentVideoIndex = 0;
-    let autoPlayInterval;
-
-    window.selectVideo = function(type, isManual = true) {
+    window.selectVideo = function(type) {
         // Remove active class from all items
         document.querySelectorAll('.bdaas-item').forEach(item => item.classList.remove('active'));
         
@@ -113,41 +109,19 @@ window.toggleFaq = function(element) {
         // Update video iframe source
         const iframe = document.querySelector('#value-video-box iframe');
         if (iframe) {
+            let videoUrl = '';
             if (type === 'launch') {
-                iframe.src = 'https://www.youtube.com/embed/5_JCsAVSHn0?si=uqME-XuDlrsgWRqP';
+                videoUrl = 'https://www.youtube.com/embed/5_JCsAVSHn0?si=uqME-XuDlrsgWRqP';
             } else if (type === 'market') {
-                iframe.src = 'https://www.youtube.com/embed/rOXNeaXi5-w?si=7NaF6v6Ou4JhkKre';
+                videoUrl = 'https://www.youtube.com/embed/rOXNeaXi5-w?si=7NaF6v6Ou4JhkKre';
             } else if (type === 'bd') {
-                iframe.src = 'https://www.youtube.com/embed/r3mrl_VLptM?si=93nOwehAzJlbj6y4';
+                videoUrl = 'https://www.youtube.com/embed/r3mrl_VLptM?si=93nOwehAzJlbj6y4';
+            }
+            if (iframe.src !== videoUrl) {
+                iframe.src = videoUrl;
             }
         }
-
-        // If triggered manually by user click, update the current index and reset autoplay interval
-        if (isManual) {
-            currentVideoIndex = videoTypes.indexOf(type);
-            if (currentVideoIndex === -1) currentVideoIndex = 0;
-            resetAutoPlay();
-        }
     };
-
-    function nextVideo() {
-        currentVideoIndex = (currentVideoIndex + 1) % videoTypes.length;
-        window.selectVideo(videoTypes[currentVideoIndex], false);
-    }
-
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextVideo, 3000); // Rotate every 3 seconds
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-    }
-
-    // Initialize auto-play when DOM is ready
-    document.addEventListener("DOMContentLoaded", function() {
-        startAutoPlay();
-    });
 })();
 
 // ═══════════════════════════════════════════

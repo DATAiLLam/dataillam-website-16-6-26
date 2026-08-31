@@ -28,8 +28,10 @@
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="img/wmremove-transformed_mobile.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
-    <link rel="preload" href="img/wmremove-transformed (1).webp" as="image" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" href="img/wmremove-transformed_mobile.webp" as="image" media="(max-width: 768px)"
+        fetchpriority="high">
+    <link rel="preload" href="img/wmremove-transformed (1).webp" as="image" media="(min-width: 769px)"
+        fetchpriority="high">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -173,12 +175,13 @@
                             <!-- Shaded Area Under Graph -->
                             <path class="trajectory-area area-1" d="M 0,320 C 30,320 60,305 92,290 L 92,330 L 0,330 Z"
                                 fill="url(#areaGradient)" />
-                            <path class="trajectory-area area-2" d="M 92,290 C 140,265 200,250 250,240 L 250,330 L 92,330 Z"
-                                fill="url(#areaGradient)" />
+                            <path class="trajectory-area area-2"
+                                d="M 92,290 C 140,265 200,250 250,240 L 250,330 L 92,330 Z" fill="url(#areaGradient)" />
                             <path class="trajectory-area area-3"
-                                d="M 250,240 C 300,215 360,205 408,205 L 408,330 L 250,330 Z" fill="url(#areaGradient)" />
-                            <path class="trajectory-area area-4" d="M 408,205 C 440,165 470,90 500,50 L 500,330 L 408,330 Z"
+                                d="M 250,240 C 300,215 360,205 408,205 L 408,330 L 250,330 Z"
                                 fill="url(#areaGradient)" />
+                            <path class="trajectory-area area-4"
+                                d="M 408,205 C 440,165 470,90 500,50 L 500,330 L 408,330 Z" fill="url(#areaGradient)" />
 
                             <!-- Main Trajectory SVG Path -->
                             <path class="trajectory-line line-1" d="M 0,320 C 30,320 60,305 92,290" fill="none"
@@ -194,14 +197,16 @@
                             <g class="milestone-node node-1" id="mNode1">
                                 <circle cx="92" cy="290" r="16" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
                                     stroke-width="1.5" />
-                                <image href="img/Without BG Without Name (2).png" x="80" y="278" width="24" height="24" />
+                                <image href="img/Without BG Without Name (2).png" x="80" y="278" width="24"
+                                    height="24" />
                             </g>
 
                             <!-- Milestone 2 Node (BD Enablement centered at x=250, y=240) -->
                             <g class="milestone-node node-2" id="mNode2">
                                 <circle cx="250" cy="240" r="22" fill="#ffffff" stroke="rgba(26, 20, 14, 0.1)"
                                     stroke-width="2" />
-                                <image href="img/Without BG Without Name (1).png" x="234" y="224" width="32" height="32" />
+                                <image href="img/Without BG Without Name (1).png" x="234" y="224" width="32"
+                                    height="32" />
                             </g>
 
                             <!-- Milestone 3 Node (Pipeline Management centered at x=408, y=205) -->
@@ -210,518 +215,526 @@
                                     stroke-width="2.5" />
                                 <image href="img/Without BG Without Name.png" x="388" y="185" width="40" height="40" />
                             </g>
-                    </svg>
+                        </svg>
 
-                    <!-- 3D Glass Towers Wrapper -->
-                    <div class="pillars-wrapper">
-                        <!-- Tower 1: Market Enablement -->
-                        <div class="pillar-group p-market" id="pillar1">
-                            <!-- Vertical Light Beam Connecting to Graph Curve -->
-                            <div class="light-beam"></div>
+                        <!-- 3D Glass Towers Wrapper -->
+                        <div class="pillars-wrapper">
+                            <!-- Tower 1: Market Enablement -->
+                            <div class="pillar-group p-market" id="pillar1">
+                                <!-- Vertical Light Beam Connecting to Graph Curve -->
+                                <div class="light-beam"></div>
 
-                            <!-- Floating Metric Pill -->
-                            <div class="tower-metric-pill">
-                                <span class="pill-dot amber"></span>
-                                <span>GTM Ready</span>
+                                <!-- Floating Metric Pill -->
+                                <div class="tower-metric-pill">
+                                    <span class="pill-dot amber"></span>
+                                    <span>GTM Ready</span>
+                                </div>
+
+                                <!-- 3D Glass Tower Column -->
+                                <div class="pillar-column glass-tower">
+                                    <div class="tower-glass-facet"></div>
+                                    <div class="energy-fill-meter"></div>
+                                    <div class="tower-top-pedestal"></div>
+                                </div>
+
+                                <!-- Label below -->
+                                <div class="pillar-label">Market Enablement</div>
+
+                                <!-- Popover Tooltip on Hover -->
+                                <div class="pillar-popover">
+                                    <div class="popover-title">Phase 1</div>
+                                    <div class="popover-body">Market entry, planned and executed for you.</div>
+                                </div>
                             </div>
 
-                            <!-- 3D Glass Tower Column -->
-                            <div class="pillar-column glass-tower">
-                                <div class="tower-glass-facet"></div>
-                                <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal"></div>
+                            <!-- Tower 2: BD Enablement -->
+                            <div class="pillar-group p-bd" id="pillar2">
+                                <!-- Vertical Light Beam Connecting to Graph Curve -->
+                                <div class="light-beam"></div>
+
+                                <!-- Floating Metric Pill -->
+                                <div class="tower-metric-pill">
+                                    <span class="pill-dot amber"></span>
+                                    <span>2 BD + BDM</span>
+                                </div>
+
+                                <!-- 3D Glass Tower Column -->
+                                <div class="pillar-column glass-tower">
+                                    <div class="tower-glass-facet"></div>
+                                    <div class="energy-fill-meter"></div>
+                                    <div class="tower-top-pedestal"></div>
+                                </div>
+
+                                <!-- Label below -->
+                                <div class="pillar-label">BD Enablement</div>
+
+                                <!-- Popover Tooltip on Hover -->
+                                <div class="pillar-popover">
+                                    <div class="popover-title">Phase 2</div>
+                                    <div class="popover-body">We find your potential customers and schedule meetings for
+                                        you.</div>
+                                </div>
                             </div>
 
-                            <!-- Label below -->
-                            <div class="pillar-label">Market Enablement</div>
+                            <!-- Tower 3: Pipeline Management -->
+                            <div class="pillar-group p-pipe" id="pillar3">
+                                <!-- Vertical Light Beam Connecting to Graph Curve -->
+                                <div class="light-beam"></div>
 
-                            <!-- Popover Tooltip on Hover -->
-                            <div class="pillar-popover">
-                                <div class="popover-title">Phase 1</div>
-                                <div class="popover-body">Market entry, planned and executed for you.</div>
-                            </div>
-                        </div>
+                                <!-- Floating Metric Pill -->
+                                <div class="tower-metric-pill">
+                                    <span class="pill-dot amber"></span>
+                                    <span>Revenue Funnel</span>
+                                </div>
 
-                        <!-- Tower 2: BD Enablement -->
-                        <div class="pillar-group p-bd" id="pillar2">
-                            <!-- Vertical Light Beam Connecting to Graph Curve -->
-                            <div class="light-beam"></div>
+                                <!-- 3D Glass Tower Column -->
+                                <div class="pillar-column glass-tower">
+                                    <div class="tower-glass-facet"></div>
+                                    <div class="energy-fill-meter"></div>
+                                    <div class="tower-top-pedestal"></div>
+                                </div>
 
-                            <!-- Floating Metric Pill -->
-                            <div class="tower-metric-pill">
-                                <span class="pill-dot amber"></span>
-                                <span>2 BD + BDM</span>
-                            </div>
+                                <!-- Label below -->
+                                <div class="pillar-label">Revenue Architecture</div>
 
-                            <!-- 3D Glass Tower Column -->
-                            <div class="pillar-column glass-tower">
-                                <div class="tower-glass-facet"></div>
-                                <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal"></div>
-                            </div>
-
-                            <!-- Label below -->
-                            <div class="pillar-label">BD Enablement</div>
-
-                            <!-- Popover Tooltip on Hover -->
-                            <div class="pillar-popover">
-                                <div class="popover-title">Phase 2</div>
-                                <div class="popover-body">We find your potential customers and schedule meetings for
-                                    you.</div>
-                            </div>
-                        </div>
-
-                        <!-- Tower 3: Pipeline Management -->
-                        <div class="pillar-group p-pipe" id="pillar3">
-                            <!-- Vertical Light Beam Connecting to Graph Curve -->
-                            <div class="light-beam"></div>
-
-                            <!-- Floating Metric Pill -->
-                            <div class="tower-metric-pill">
-                                <span class="pill-dot amber"></span>
-                                <span>Revenue Funnel</span>
-                            </div>
-
-                            <!-- 3D Glass Tower Column -->
-                            <div class="pillar-column glass-tower">
-                                <div class="tower-glass-facet"></div>
-                                <div class="energy-fill-meter"></div>
-                                <div class="tower-top-pedestal"></div>
-                            </div>
-
-                            <!-- Label below -->
-                            <div class="pillar-label">Revenue Architecture</div>
-
-                            <!-- Popover Tooltip on Hover -->
-                            <div class="pillar-popover">
-                                <div class="popover-title">Phase 3</div>
-                                <div class="popover-body">We optimize your funnel to increase conversions, growth, and
-                                    revenue.</div>
+                                <!-- Popover Tooltip on Hover -->
+                                <div class="pillar-popover">
+                                    <div class="popover-title">Phase 3</div>
+                                    <div class="popover-body">We optimize your funnel to increase conversions, growth,
+                                        and
+                                        revenue.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ─── OUR STORY ─── -->
-    <section class="story-section" id="launching-bdaas">
-        <div class="story-bg-dots"></div>
-        <div class="story-grid">
-            <div class="story-img-area slide-l">
-                <div class="story-img-main">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="img/Our_story_mobile.webp">
-                        <img src="img/Our story.webp" alt="DATAiLLAM Team at Work" loading="lazy" width="600" height="400">
-                    </picture>
-                </div>
-            </div>
-            <div class="slide-r" style="transition-delay:0.1s">
-                <div class="eyebrow">
-                    <div class="eline"></div><span class="etext">Our Story</span>
-                </div>
-                <h2 class="section-h2" style="margin-bottom:20px">Launching <span class="bdaas-text"
-                        style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>
-                    Company
-                </h2>
-                <p class="story-content" style="font-family: var(--serif);"><span
-                        class="brand-word">DATA<span>i</span>LLAM</span> is <span class="bdaas-full-text"><span
-                            class="red">B</span>usiness <span class="red">D</span>evelopment <span class="red">a</span>s
-                        <span class="red">a</span> <span class="red">S</span>ervice</span> (<span class="bdaas-text"
-                        style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>)
-                    Company.</p>
-                <p class="story-content">A category we pioneered to solve a problem that Consulting Firms, Marketing
-                    Agencies,
-                    and Outsourced Sales Teams were never designed to fix.</p>
-                <p class="story-content">We don't advise. We don't campaign. We build the actual, working Business
-                    Development capability, People, Process, and Pipeline, plugged directly into your Company.</p>
-                <a href="About/" class="link-gold">Read more about us &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── WHAT IS BDAAS ─── -->
-    <section class="what-section">
-        <div class="what-wave">
-            <div class="wave-layer track-1">
-                <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="var(--paper)" d="M 0,60 Q 180,140 360,60 T 720,60 T 1080,60 T 1440,60 V 0 H 0 Z" />
-                </svg>
-                <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="var(--paper)" d="M 0,60 Q 180,140 360,60 T 720,60 T 1080,60 T 1440,60 V 0 H 0 Z" />
-                </svg>
-            </div>
-            <div class="wave-layer track-2">
-                <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="var(--paper)"
-                        d="M 0,80 Q 120,150 240,80 T 480,80 T 720,80 T 960,80 T 1200,80 T 1440,80 V 0 H 0 Z" />
-                </svg>
-                <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="var(--paper)"
-                        d="M 0,80 Q 120,150 240,80 T 480,80 T 720,80 T 960,80 T 1200,80 T 1440,80 V 0 H 0 Z" />
-                </svg>
-            </div>
-        </div>
-        <div class="what-inner fade-up" style="padding-top:20px">
-            <div class="eyebrow" style="justify-content:center">
-                <div class="eline"></div><span class="etext"><span class="bdaas-text"
-                        style="font-family: var(--serif) !important;"><span style=" color: var(--amber)">B</span><span
-                            style=" color: var(--amber)">D</span>aa<span style="color:var(--amber)">S</span></span>
-                    Explained</span>
-                <div class="eline"></div>
-            </div>
-            <h2 class="section-h2" style="margin-bottom:16px">What is <span class="bdaas-text"
-                    style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>?
-            </h2>
-            <p class="what-desc"><span style=" color: var(--red)">B</span><span
-                    style=" color: var(--red)">D</span>aa<span style="color:var(--red)">S</span></span> is a
-                Structured Growth Ownership Model, where we embed inside your
-                organisation, design your Revenue Architecture from the ground up, and operate your complete BD
-                function until it runs on its own.</p>
-            <div class="tagline-bar">
-                <a href="Bdaas/" class="floating-gold-btn">
-                    <span><span class="bdaas-text-custom"><span class="bds">BD</span><span class="aa">aa</span><span
-                                class="bds">S</span></span> is not Consulting.</span>
-                </a>
-                <a href="Bdaas/" class="floating-gold-btn">
-                    <span>Not Marketing.</span>
-                </a>
-                <a href="Bdaas/" class="floating-gold-btn">
-                    <span>Not Outsourced Sales.</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── CTA STRIP ─── -->
-    <div class="cta-strip fade-up">
-        <p>Ready to build the BD function your Company is missing?</p>
-        <a href="Contact/" class="btn-white">Talk to us &rarr;</a>
-    </div>
-
-    <!-- ─── VALUE SECTION ─── -->
-    <section class="value-section">
-        <div class="value-bg-dots"></div>
-        <div class="value-head fade-up">
-            <div class="eyebrow" style="justify-content:center">
-                <div class="eline"></div><span class="etext">Here's Where We Come In</span>
-                <div class="eline"></div>
-            </div>
-            <h2 class="section-h2">We build the BD function your Company is missing.</h2>
-            <p class="value-sub">Not a Pitch Deck. Not a Strategy Document that collects dust. An actual, working
-                Business Development capability, People, Process, and Pipeline, plugged into your Company.</p>
-        </div>
-        <div class="value-split">
-            <div class="bdaas-card scale-up">
-                <div class="bdaas-card-top-bar"></div>
-                <div class="bdaas-card-inner">
-                    <div class="bdaas-items">
-                        <div class="bdaas-item active" id="btn-launch" onclick="selectVideo('launch')">
-                            <div class="bdaas-item-icon">
-                                <img src="img/logo_optimized.webp" alt="Logo" loading="lazy" width="40" height="40">
-                            </div>
-                            <div class="bdaas-item-content">
-                                <strong><span style="color: var(--red   )">B</span><span
-                                        style="color: var(--red)">D</span>aa<span style="color: var(--red)">S</span>
-                                    Launch</strong>
-                                <p>For Startups &amp; SMEs. You have a Product but no BD Engine. We build it from
-                                    scratch.</p>
-                            </div>
-                        </div>
-                        <div class="bdaas-item" id="btn-market" onclick="selectVideo('market')">
-                            <div class="bdaas-item-icon"><img src="img/logo_optimized.webp" alt="Logo"
-                                    loading="lazy" width="40" height="40">
-                            </div>
-                            <div class="bdaas-item-content">
-                                <strong>Market Enablement</strong>
-                                <p>ICP Definition, Positioning, Brand Architecture, Go-To-Market Playbook</p>
-                            </div>
-                        </div>
-                        <div class="bdaas-item" id="btn-bd" onclick="selectVideo('bd')">
-                            <div class="bdaas-item-icon"><img src="img/logo_optimized.webp" alt="Logo"
-                                    loading="lazy" width="40" height="40">
-                            </div>
-                            <div class="bdaas-item-content">
-                                <strong>BD Enablement</strong>
-                                <p>Dedicated BD Executives + BDM + Outreach Systems + Pipeline Management</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bdaas-card-footer">
-                        <a href="Service/" class="btn-card-explore">Explore Launch </a>
+        <!-- ─── OUR STORY ─── -->
+        <section class="story-section" id="launching-bdaas">
+            <div class="story-bg-dots"></div>
+            <div class="story-grid">
+                <div class="story-img-area slide-l">
+                    <div class="story-img-main">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="img/Our_story_mobile.webp">
+                            <img src="img/Our story.webp" alt="DATAiLLAM Team at Work" loading="lazy" width="600"
+                                height="400">
+                        </picture>
                     </div>
                 </div>
-            </div>
-            <div class="value-video-wrap scale-up" style="transition-delay:0.12s">
-                <div class="value-video-box" id="value-video-box" style="padding: 0;">
-                    <iframe src="https://www.youtube.com/embed/5_JCsAVSHn0?si=uqME-XuDlrsgWRqP"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                        style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
-                </div>
-                <p
-                    style="text-align:center;font-size:12px;color:var(--mute);margin-top:12px;letter-spacing:0.5px;font-family:var(--sans)">
-                    &#9654;&nbsp; Click any item on the left to switch video
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── FAQ ─── -->
-    <section class="faq-section" id="faq">
-        <div class="faq-accent-dots"></div>
-        <div class="faq-wrap">
-            <div class="faq-left slide-l">
-                <span class="section-label">FAQ</span>
-                <h2 class="faq-section-h2">Frequently<br>Asked<br>Questions</h2>
-                <p>Everything you need to know about how we work. Can't find an answer? <a href="#contact">Reach out
-                        directly.</a></p>
-            </div>
-            <div class="faq-list slide-r" style="transition-delay:0.1s">
-                <div class="faq-item open" onclick="toggleFaq(this)">
-                    <div class="faq-header">
-                        <span class="faq-q">What is <span class="bdaas-full-text"><span class="red">B</span>usiness
-                                <span class="red">D</span>evelopment <span class="red">a</span>s <span
-                                    class="red">a</span> <span class="red">S</span>ervice</span> (<span
-                                class="bdaas-text"><span style="font-family: var(--serif);">B</span><span
-                                    style="font-family: var(--serif);">D</span><span
-                                    style="font-family: var(--serif); color: black;">aa</span><span
-                                    style="font-family: var(--serif);">S</span></span>)?</span>
-                        <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
-                                <path d="M6 1v10M1 6h10" />
-                            </svg></div>
+                <div class="slide-r" style="transition-delay:0.1s">
+                    <div class="eyebrow">
+                        <div class="eline"></div><span class="etext">Our Story</span>
                     </div>
-                    <div class="faq-body open">
-                        <p class="faq-a">An embedded Business Development function, without the cost or long-term
-                            commitment of a full-time hire. We bring the People, the System, and the Process, and
-                            run it inside your Company.</p>
-                    </div>
-                </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-header">
-                        <span class="faq-q">How is this different from hiring a Consultant or Agency?</span>
-                        <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
-                                <path d="M6 1v10M1 6h10" />
-                            </svg></div>
-                    </div>
-                    <div class="faq-body">
-                        <p class="faq-a">Consultants give advice. Agencies run campaigns. We build the Function
-                            itself, Strategy, dedicated People, Outreach Systems, and Pipeline, then run it inside
-                            your Company until it's self-sustaining.</p>
-                    </div>
-                </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-header">
-                        <span class="faq-q">When should a Startup use this service?</span>
-                        <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
-                                <path d="M6 1v10M1 6h10" />
-                            </svg></div>
-                    </div>
-                    <div class="faq-body">
-                        <p class="faq-a">When you have a Product that works, early Clients who love you, and no
-                            reliable System for finding the next one. If Growth depends on the Founder making calls,
-                            it's time.</p>
-                    </div>
-                </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-header">
-                        <span class="faq-q">What results can we expect?</span>
-                        <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
-                                <path d="M6 1v10M1 6h10" />
-                            </svg></div>
-                    </div>
-                    <div class="faq-body">
-                        <p class="faq-a">A defined ICP, Structured Pipeline, Outbound System in motion, and a BD
-                            Function that runs without you in every meeting. Predictable, not accidental.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── CONTACT SECTION ─── -->
-    <section class="contact-section" id="contact">
-        <div class="contact-grid container">
-            <div class="contact-info fade-up">
-                <div class="eyebrow">
-                    <div class="eline"></div><span class="etext">Get In Touch</span>
-                </div>
-                <h2 class="section-h2">We'd love to hear<br>from <em>you.</em></h2>
-                <p>Interested in becoming a <span><span style="color: var(--red);">B</span><span
-                            style="color: var(--red);">D</span>aa<span style="color: var(--red);">S</span></span>
-                    Client or looking to collaborate on a project? Let us know what you're thinking.</p>
-            </div>
-            <div class="contact-form scale-up">
-                <form id="contactForm" novalidate aria-label="Contact form" autocomplete="off">
-                    <div class="form-row">
-                        <div class="form-group field-wrap">
-                            <label>Company Name *</label>
-                            <input type="text" class="form-input" id="fcompany" name="company_name"
-                                placeholder="Your company name" required>
-                            <span class="field-error-msg"></span>
-                        </div>
-                        <div class="form-group field-wrap">
-                            <label>Company Size *</label>
-                            <select class="form-input" id="fsize" name="company_size" required>
-                                <option value="" disabled selected>Select size</option>
-                                <option value="1-10">10 employees</option>
-                                <option value="11-50">50 employees</option>
-                                <option value="51-100">100 employees</option>
-                                <option value="101-1000">1000 employees</option>
-                                <option value="1000+">1000+ employees</option>
-                            </select>
-                            <span class="field-error-msg"></span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group field-wrap">
-                            <label>Industry *</label>
-                            <select class="form-input" id="findustry" name="industry" required>
-                                <option value="" disabled selected>Select industry</option>
-                                <option value="B2B">B2B</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <span class="field-error-msg"></span>
-                        </div>
-                        <div class="form-group field-wrap">
-                            <label>Company Email *</label>
-                            <input type="email" class="form-input" id="femail" name="from_email"
-                                placeholder="business@yourcompany.com" required>
-                            <span class="field-error-msg"></span>
-                        </div>
-                    </div>
-                    <div class="form-group field-wrap" style="margin-bottom:20px">
-                        <label>Phone Number *</label>
-                        <input type="tel" class="form-input" id="fphone" name="phone" placeholder="+91 00000 00000"
-                            required>
-                        <span class="field-error-msg"></span>
-                    </div>
-                    <div class="form-group field-wrap" style="margin-bottom:20px">
-                        <label>Message *</label>
-                        <textarea class="form-input" id="fmessage" name="message" rows="4"
-                            placeholder="Tell us about your business and what you're looking for..."
-                            required></textarea>
-                        <span class="field-error-msg"></span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap;">
-                        <button type="submit" class="btn-form" id="submitBtn"><span class="btn-txt">Send Message
-                                &rarr;</span></button>
-                        <div class="form-success-banner" id="formSuccess" role="alert"
-                            style="display:none;color:var(--amber);font-weight:600;font-size:14px;">
-                            <i class="bi bi-check-circle-fill"></i> Message sent! We'll be in touch shortly.
-                        </div>
-                    </div>
-                    <div role="status" aria-live="polite" id="formStatus"
-                        style="font-size:14px;color:var(--red);margin-top:10px;min-height:20px;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── FOOTER ─── -->
-    <footer>
-        <div class="footer-upper">
-            <div class="footer-top-row">
-                <div class="footer-logo-block">
-                    <img src="img/Without BG Without Name.png" alt="DATAiLLAM Logo" class="footer-logo-img"
-                        onerror="this.style.display='none'">
-                    <div class="footer-brand-name brand-text">DATA<span>i</span>LLAM</div>
-                </div>
-                <div class="footer-description-block">
-                    <p class="footer-desc-main"><span class="footer-desc-highlight"><span
-                                class="brand-text">DATA<span>i</span>LLAM</span> is <span
-                                class="text-red">B</span>usiness <span class="text-red">D</span>evelopment <span
-                                class="text-red">a</span>s <span class="text-red">a</span> <span
-                                class="text-red">S</span>ervice (<span class="text-red">BD</span>aa<span
-                                class="text-red">S</span>)</span><br>
-                        Company a category we pioneered to solve a problem that Consulting Firms, Marketing Agencies,
+                    <h2 class="section-h2" style="margin-bottom:20px">Launching <span class="bdaas-text"
+                            style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>
+                        Company
+                    </h2>
+                    <p class="story-content" style="font-family: var(--serif);"><span
+                            class="brand-word">DATA<span>i</span>LLAM</span> is <span class="bdaas-full-text"><span
+                                class="red">B</span>usiness <span class="red">D</span>evelopment <span
+                                class="red">a</span>s
+                            <span class="red">a</span> <span class="red">S</span>ervice</span> (<span class="bdaas-text"
+                            style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>)
+                        Company.</p>
+                    <p class="story-content">A category we pioneered to solve a problem that Consulting Firms, Marketing
+                        Agencies,
                         and Outsourced Sales Teams were never designed to fix.</p>
-                    <p class="footer-desc-tagline"><strong><span><span style="color:var(--red)">B</span><span
-                                    style="color:var(--red)">D</span>aa<span style="color:var(--red)">S</span></span> is
-                            not Consulting. Not Marketing. Not
-                            Outsourced Sales.</strong></p>
+                    <p class="story-content">We don't advise. We don't campaign. We build the actual, working Business
+                        Development capability, People, Process, and Pipeline, plugged directly into your Company.</p>
+                    <a href="About/" class="link-gold">Read more about us &rarr;</a>
                 </div>
             </div>
-            <div class="footer-nav-row">
-                <div>
-                    <div class="footer-col-title">Navigation</div>
-                    <ul class="footer-links">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="About/">About</a></li>
-                        <li><a href="Service/">Service</a></li>
-                        <li><a href="Contact/">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="footer-col-title">About</div>
-                    <ul class="footer-links">
-                        <li><a href="About/">Our story</a></li>
-                        <li><a href="About/#teamCarousel">Our team</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="footer-col-title">Resources</div>
-                    <ul class="footer-links">
-                        <li><a href="Bdaas/">BDaaS Culture</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="footer-col-title">Business Inquiry:</div>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="mailto:business@dataillam.com" class="footer-email-link">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                                    <path d="M2 7l10 7 10-7" />
-                                </svg>
-                                business@dataillam.com
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom-strip">
-            <p class="footer-copy">Copyright &copy; 2026 <a href="#">www.dataillam.com</a></p>
-            <div class="social-row">
-                <a href="https://www.linkedin.com/company/dataillam/" class="social-btn" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/dataillam" class="social-btn" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                </a>
-                <a href="#" class="social-btn" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/dataillam/" class="social-btn" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                    </svg>
-                </a>
-                <a href="https://x.com/dataillam" class="social-btn" aria-label="X">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <script src="js/home.js" defer></script>
-    <script src="js/navbar.js" defer></script>
+        <!-- ─── WHAT IS BDAAS ─── -->
+        <section class="what-section">
+            <div class="what-wave">
+                <div class="wave-layer track-1">
+                    <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path fill="var(--paper)" d="M 0,60 Q 180,140 360,60 T 720,60 T 1080,60 T 1440,60 V 0 H 0 Z" />
+                    </svg>
+                    <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path fill="var(--paper)" d="M 0,60 Q 180,140 360,60 T 720,60 T 1080,60 T 1440,60 V 0 H 0 Z" />
+                    </svg>
+                </div>
+                <div class="wave-layer track-2">
+                    <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path fill="var(--paper)"
+                            d="M 0,80 Q 120,150 240,80 T 480,80 T 720,80 T 960,80 T 1200,80 T 1440,80 V 0 H 0 Z" />
+                    </svg>
+                    <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <path fill="var(--paper)"
+                            d="M 0,80 Q 120,150 240,80 T 480,80 T 720,80 T 960,80 T 1200,80 T 1440,80 V 0 H 0 Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="what-inner fade-up" style="padding-top:20px">
+                <div class="eyebrow" style="justify-content:center">
+                    <div class="eline"></div><span class="etext"><span class="bdaas-text"
+                            style="font-family: var(--serif) !important;"><span
+                                style=" color: var(--amber)">B</span><span style=" color: var(--amber)">D</span>aa<span
+                                style="color:var(--amber)">S</span></span>
+                        Explained</span>
+                    <div class="eline"></div>
+                </div>
+                <h2 class="section-h2" style="margin-bottom:16px">What is <span class="bdaas-text"
+                        style="font-family: var(--serif) !important;"><span>B</span><span>D</span>aa<span>S</span></span>?
+                </h2>
+                <p class="what-desc"><span style=" color: var(--red)">B</span><span
+                        style=" color: var(--red)">D</span>aa<span style="color:var(--red)">S</span></span> is a
+                    Structured Growth Ownership Model, where we embed inside your
+                    organisation, design your Revenue Architecture from the ground up, and operate your complete BD
+                    function until it runs on its own.</p>
+                <div class="tagline-bar">
+                    <a href="Bdaas/" class="floating-gold-btn">
+                        <span><span class="bdaas-text-custom"><span class="bds">BD</span><span class="aa">aa</span><span
+                                    class="bds">S</span></span> is not Consulting.</span>
+                    </a>
+                    <a href="Bdaas/" class="floating-gold-btn">
+                        <span>Not Marketing.</span>
+                    </a>
+                    <a href="Bdaas/" class="floating-gold-btn">
+                        <span>Not Outsourced Sales.</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA STRIP ─── -->
+        <div class="cta-strip fade-up">
+            <p>Ready to build the BD function your Company is missing?</p>
+            <a href="Contact/" class="btn-white">Talk to us &rarr;</a>
+        </div>
+
+        <!-- ─── VALUE SECTION ─── -->
+        <section class="value-section">
+            <div class="value-bg-dots"></div>
+            <div class="value-head fade-up">
+                <div class="eyebrow" style="justify-content:center">
+                    <div class="eline"></div><span class="etext">Here's Where We Come In</span>
+                    <div class="eline"></div>
+                </div>
+                <h2 class="section-h2">We build the BD function your Company is missing.</h2>
+                <p class="value-sub">Not a Pitch Deck. Not a Strategy Document that collects dust. An actual, working
+                    Business Development capability, People, Process, and Pipeline, plugged into your Company.</p>
+            </div>
+            <div class="value-split">
+                <div class="bdaas-card scale-up">
+                    <div class="bdaas-card-top-bar"></div>
+                    <div class="bdaas-card-inner">
+                        <div class="bdaas-items">
+                            <div class="bdaas-item active" id="btn-launch" onclick="selectVideo('launch')">
+                                <div class="bdaas-item-icon">
+                                    <img src="img/Without BG Without Name (1).png" alt="Logo" loading="lazy" width="40"
+                                        height="40">
+                                </div>
+                                <div class="bdaas-item-content">
+                                    <strong><span style="color: var(--red   )">B</span><span
+                                            style="color: var(--red)">D</span>aa<span style="color: var(--red)">S</span>
+                                        Launch</strong>
+                                    <p>For Startups &amp; SMEs. You have a Product but no BD Engine. We build it from
+                                        scratch.</p>
+                                </div>
+                            </div>
+                            <div class="bdaas-item" id="btn-market" onclick="selectVideo('market')">
+                                <div class="bdaas-item-icon"><img src="img/Without BG Without Name (2).png" alt="Logo"
+                                        loading="lazy" width="40" height="40">
+                                </div>
+                                <div class="bdaas-item-content">
+                                    <strong>Market Enablement</strong>
+                                    <p>ICP Definition, Positioning, Brand Architecture, Go-To-Market Playbook</p>
+                                </div>
+                            </div>
+                            <div class="bdaas-item" id="btn-bd" onclick="selectVideo('bd')">
+                                <div class="bdaas-item-icon"><img src="img/Without BG Without Name (1).png" alt="Logo"
+                                        loading="lazy" width="40" height="40">
+                                </div>
+                                <div class="bdaas-item-content">
+                                    <strong>BD Enablement</strong>
+                                    <p>Dedicated BD Executives + BDM + Outreach Systems + Pipeline Management</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bdaas-card-footer">
+                            <a href="Service/" class="btn-card-explore">Explore Launch </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="value-video-wrap scale-up" style="transition-delay:0.12s">
+                    <div class="value-video-box" id="value-video-box" style="padding: 0;">
+                        <iframe src="https://www.youtube.com/embed/5_JCsAVSHn0?si=uqME-XuDlrsgWRqP"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                            style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
+                    </div>
+                    <p
+                        style="text-align:center;font-size:12px;color:var(--mute);margin-top:12px;letter-spacing:0.5px;font-family:var(--sans)">
+                        &#9654;&nbsp; Click any item on the left to switch video
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FAQ ─── -->
+        <section class="faq-section" id="faq">
+            <div class="faq-accent-dots"></div>
+            <div class="faq-wrap">
+                <div class="faq-left slide-l">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="faq-section-h2">Frequently<br>Asked<br>Questions</h2>
+                    <p>Everything you need to know about how we work. Can't find an answer? <a href="#contact">Reach out
+                            directly.</a></p>
+                </div>
+                <div class="faq-list slide-r" style="transition-delay:0.1s">
+                    <div class="faq-item open" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <span class="faq-q">What is <span class="bdaas-full-text"><span class="red">B</span>usiness
+                                    <span class="red">D</span>evelopment <span class="red">a</span>s <span
+                                        class="red">a</span> <span class="red">S</span>ervice</span> (<span
+                                    class="bdaas-text"><span style="font-family: var(--serif);">B</span><span
+                                        style="font-family: var(--serif);">D</span><span
+                                        style="font-family: var(--serif); color: black;">aa</span><span
+                                        style="font-family: var(--serif);">S</span></span>)?</span>
+                            <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 1v10M1 6h10" />
+                                </svg></div>
+                        </div>
+                        <div class="faq-body open">
+                            <p class="faq-a">An embedded Business Development function, without the cost or long-term
+                                commitment of a full-time hire. We bring the People, the System, and the Process, and
+                                run it inside your Company.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <span class="faq-q">How is this different from hiring a Consultant or Agency?</span>
+                            <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 1v10M1 6h10" />
+                                </svg></div>
+                        </div>
+                        <div class="faq-body">
+                            <p class="faq-a">Consultants give advice. Agencies run campaigns. We build the Function
+                                itself, Strategy, dedicated People, Outreach Systems, and Pipeline, then run it inside
+                                your Company until it's self-sustaining.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <span class="faq-q">When should a Startup use this service?</span>
+                            <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 1v10M1 6h10" />
+                                </svg></div>
+                        </div>
+                        <div class="faq-body">
+                            <p class="faq-a">When you have a Product that works, early Clients who love you, and no
+                                reliable System for finding the next one. If Growth depends on the Founder making calls,
+                                it's time.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <span class="faq-q">What results can we expect?</span>
+                            <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 1v10M1 6h10" />
+                                </svg></div>
+                        </div>
+                        <div class="faq-body">
+                            <p class="faq-a">A defined ICP, Structured Pipeline, Outbound System in motion, and a BD
+                                Function that runs without you in every meeting. Predictable, not accidental.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT SECTION ─── -->
+        <section class="contact-section" id="contact">
+            <div class="contact-grid container">
+                <div class="contact-info fade-up">
+                    <div class="eyebrow">
+                        <div class="eline"></div><span class="etext">Get In Touch</span>
+                    </div>
+                    <h2 class="section-h2">We'd love to hear<br>from <em>you.</em></h2>
+                    <p>Interested in becoming a <span><span style="color: var(--red);">B</span><span
+                                style="color: var(--red);">D</span>aa<span style="color: var(--red);">S</span></span>
+                        Client or looking to collaborate on a project? Let us know what you're thinking.</p>
+                </div>
+                <div class="contact-form scale-up">
+                    <form id="contactForm" novalidate aria-label="Contact form" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group field-wrap">
+                                <label>Company Name *</label>
+                                <input type="text" class="form-input" id="fcompany" name="company_name"
+                                    placeholder="Your company name" required>
+                                <span class="field-error-msg"></span>
+                            </div>
+                            <div class="form-group field-wrap">
+                                <label>Company Size *</label>
+                                <select class="form-input" id="fsize" name="company_size" required>
+                                    <option value="" disabled selected>Select size</option>
+                                    <option value="1-10">10 employees</option>
+                                    <option value="11-50">50 employees</option>
+                                    <option value="51-100">100 employees</option>
+                                    <option value="101-1000">1000 employees</option>
+                                    <option value="1000+">1000+ employees</option>
+                                </select>
+                                <span class="field-error-msg"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group field-wrap">
+                                <label>Industry *</label>
+                                <select class="form-input" id="findustry" name="industry" required>
+                                    <option value="" disabled selected>Select industry</option>
+                                    <option value="B2B">B2B</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="field-error-msg"></span>
+                            </div>
+                            <div class="form-group field-wrap">
+                                <label>Company Email *</label>
+                                <input type="email" class="form-input" id="femail" name="from_email"
+                                    placeholder="business@yourcompany.com" required>
+                                <span class="field-error-msg"></span>
+                            </div>
+                        </div>
+                        <div class="form-group field-wrap" style="margin-bottom:20px">
+                            <label>Phone Number *</label>
+                            <input type="tel" class="form-input" id="fphone" name="phone" placeholder="+91 00000 00000"
+                                required>
+                            <span class="field-error-msg"></span>
+                        </div>
+                        <div class="form-group field-wrap" style="margin-bottom:20px">
+                            <label>Message *</label>
+                            <textarea class="form-input" id="fmessage" name="message" rows="4"
+                                placeholder="Tell us about your business and what you're looking for..."
+                                required></textarea>
+                            <span class="field-error-msg"></span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap;">
+                            <button type="submit" class="btn-form" id="submitBtn"><span class="btn-txt">Send Message
+                                    &rarr;</span></button>
+                            <div class="form-success-banner" id="formSuccess" role="alert"
+                                style="display:none;color:var(--amber);font-weight:600;font-size:14px;">
+                                <i class="bi bi-check-circle-fill"></i> Message sent! We'll be in touch shortly.
+                            </div>
+                        </div>
+                        <div role="status" aria-live="polite" id="formStatus"
+                            style="font-size:14px;color:var(--red);margin-top:10px;min-height:20px;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FOOTER ─── -->
+        <footer>
+            <div class="footer-upper">
+                <div class="footer-top-row">
+                    <div class="footer-logo-block">
+                        <img src="img/Without BG Without Name.png" alt="DATAiLLAM Logo" class="footer-logo-img"
+                            onerror="this.style.display='none'">
+                        <div class="footer-brand-name brand-text">DATA<span>i</span>LLAM</div>
+                    </div>
+                    <div class="footer-description-block">
+                        <p class="footer-desc-main"><span class="footer-desc-highlight"><span
+                                    class="brand-text">DATA<span>i</span>LLAM</span> is <span
+                                    class="text-red">B</span>usiness <span class="text-red">D</span>evelopment <span
+                                    class="text-red">a</span>s <span class="text-red">a</span> <span
+                                    class="text-red">S</span>ervice (<span class="text-red">BD</span>aa<span
+                                    class="text-red">S</span>)</span><br>
+                            Company a category we pioneered to solve a problem that Consulting Firms, Marketing
+                            Agencies,
+                            and Outsourced Sales Teams were never designed to fix.</p>
+                        <p class="footer-desc-tagline"><strong><span><span style="color:var(--red)">B</span><span
+                                        style="color:var(--red)">D</span>aa<span
+                                        style="color:var(--red)">S</span></span> is
+                                not Consulting. Not Marketing. Not
+                                Outsourced Sales.</strong></p>
+                    </div>
+                </div>
+                <div class="footer-nav-row">
+                    <div>
+                        <div class="footer-col-title">Navigation</div>
+                        <ul class="footer-links">
+                            <li><a href="./">Home</a></li>
+                            <li><a href="About/">About</a></li>
+                            <li><a href="Service/">Service</a></li>
+                            <li><a href="Contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">About</div>
+                        <ul class="footer-links">
+                            <li><a href="About/">Our story</a></li>
+                            <li><a href="About/#teamSection">Our team</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Resources</div>
+                        <ul class="footer-links">
+                            <li><a href="Bdaas/">BDaaS Culture</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Business Inquiry:</div>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="mailto:business@dataillam.com" class="footer-email-link">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="M2 7l10 7 10-7" />
+                                    </svg>
+                                    business@dataillam.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-strip">
+                <p class="footer-copy">Copyright &copy; 2026 <a href="#">www.dataillam.com</a></p>
+                <div class="social-row">
+                    <a href="https://www.linkedin.com/company/dataillam/" class="social-btn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/dataillam" class="social-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@BDaaSLaunchbyDATAiLLAM" class="social-btn" aria-label="YouTube"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/dataillam/" class="social-btn" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/dataillam" class="social-btn" aria-label="X">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/home.js" defer></script>
+        <script src="js/navbar.js" defer></script>
 </body>
 
 </html>
