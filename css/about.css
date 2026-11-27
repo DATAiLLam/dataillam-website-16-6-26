@@ -2906,6 +2906,10 @@ h3,
         padding: 60px 0;
 }
 
+    .about-hero-v2 .glass-badge {
+        display: none;
+    }
+
 
 
     .about-hero-v2  {
