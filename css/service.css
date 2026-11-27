@@ -1179,6 +1179,32 @@ to {
     margin-top:auto;
 }
 
+@keyframes goldShine {
+    0% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+.price-shine-text {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    font-weight: 900;
+    line-height: 1.15;
+    min-height: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(110deg, #B57810 0%, #D4921A 35%, #FFE38F 50%, #D4921A 65%, #B57810 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShine 3.2s linear infinite;
+}
+
 .price-label {
     font-size:10px;
     font-weight:800;
